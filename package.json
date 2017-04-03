@@ -1,0 +1,25 @@
+{
+  "name": "sun",
+  "version": "1.0.0",
+  "description": "Uma aplicação para gerenciamento de estoque",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeBeachD/Sun.git"
+  },
+  "author": "CodeBeach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeBeachD/Sun/issues"
+  },
+  "homepage": "https://github.com/codeBeachD/Sun#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "consign": "^0.1.2",
+    "express": "^4.15.2"
+  }
+}
