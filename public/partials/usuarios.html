@@ -1,0 +1,24 @@
+<div class="page-header">
+    <h2> Lista de Usuários</h2>
+</div>  <!--Fim do page-header-->
+<div>
+    <input class="form-control" placeholder="Buscar" ng-model="filtro" ng-model-options="{ debounce: 200 }">
+</div>
+<table class="table">
+    
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>ID</th>
+            <th>Nível</th>
+        </tr>
+     </thead>
+    <tbody>
+        <tr ng-repeat="usuario in usuarios |filter:filtro ">
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.nivel}}</td>
+         </tr>
+    </tbody>
+</table>  
+<a href="usuarios/new" class="btn btn-primary">Novo Usuário</a>

@@ -1,7 +1,6 @@
-var http = require('http');
-var app = require('./config/express');
+var app = require('./config/express')();
+require('./config/database')('localhost/sundb');
 
-
-http.createServer(app).listen(3000,function(){
-    console.log('O servidor foi iniciado!!');
+app.listen(3000,function(){
+    console.log('O servidor foi iniciado!');
 });

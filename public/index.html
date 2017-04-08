@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br"> 
+<html lang="pt-br" ng-app="sun"> 
     <head>
         <meta charset="UTF-8">
+        <base href="/">
         <meta name="viewport" content="width=device-width">
-        <title>Sistema Único do Negócio!!</title>
+        <title>SUN</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <script src="js/lib/angular.min.js"></script>
-        <script src="js/lib/angular-animate.min.js"></script>
         <script src="js/lib/angular-route.min.js"></script>
-        <script src="js/lib/angular-resource.min.js"></script>
+          <!--Módulos-->
+        <script src="js/main.js"></script>
+          <!--Fim Módulos-->
+          <!--Começo controllers -->
+        <script src="js/controllers/tabela-controller.js"></script>
+        <script src="js/controllers/user-cadastro-controller.js"></script>
+        <script src="js/controllers/user-login.js"></script>
+          <!--Fim Controllers -->
+    
     </head>
-
-    <h1>Hello world</h1>
-
+    <body>
+        <div class="container">
+            <ng-view></ng-view>
+        </div><!-- fim container -->
+    </body>
 </html>

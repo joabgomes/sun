@@ -1,10 +1,31 @@
+var mongoose = require('mongoose');
 var api = {};
 
-api.lista = function(request,response){
+var model = mongoose.model('Usuario');
 
+
+
+api.lista = function(request,response){
+    model
+        .find({})
+        .then(function(usuarios){
+            response.json(usuarios);
+        },function(error){
+            console.log(error);
+            response.status(500).json(error);
+        });
 };
 
 api.adiciona = function(request,response){
+    var usuario = request.body;
+    model
+        .create (usuario)
+        .then (function(usuario){
+            response.json(usuario);
+        },function(error){
+            console.log(error);
+            response.status(500).json(error);
+        });
 
 };
 
