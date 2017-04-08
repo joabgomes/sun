@@ -16,10 +16,6 @@ angular.module('sun',['ngRoute'])
         
     });
 
-     $routeProvider.when('/login',{  // codigo chama a tela de login
-        templateUrl: 'partials/login.html',
-     });
-
     $routeProvider.otherwise({redirectTo: '/usuarios'});
 
 

@@ -2,11 +2,12 @@ var mongoose = require('mongoose');
 var api = {};
 
 var model = mongoose.model('Usuario');
+var modelLista = mongoose.model('ListaUsuario')
 
 
 
 api.lista = function(request,response){
-    model
+    modelLista
         .find({})
         .then(function(usuarios){
             response.json(usuarios);

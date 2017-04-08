@@ -16,7 +16,6 @@ module.exports = function(app){
     
     app.all('/*', function(request, response){
         response.sendFile(path.resolve('public/index.html'));
-
     });
        
     };
