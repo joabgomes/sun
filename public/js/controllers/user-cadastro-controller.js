@@ -20,7 +20,7 @@ angular.module('sun').controller('CadastroUsuarioController', function($scope, $
                     
            }).catch(function(error){
                 console.log(error);
-                $scope.mensagem = 'Ops! Não foi possível cadastrar este usuário.';
+                $scope.mensagem = 'Ops! Não foi possível cadastrar este usuário.Tente escolher outro Nome de Usuário.';
            });
            
          }

@@ -1,10 +1,10 @@
 angular.module('sun',['ngRoute'])
-.config(function($routeProvider, $locationProvider){
+.config(function($routeProvider, $locationProvider, $httpProvider ){
 
     //AQUI FICA TODAS AS ROTAS DAS VIEWS ASSOCIADAS COM OS SEUS RESPECTIVOS CONTROLLERS
-   
-    $locationProvider.html5Mode(true); //ativa o modo html5 que remove a # da rota definida no angular
 
+    $httpProvider.interceptors.push('tokenInterceptor');
+   
     $routeProvider.when('/usuarios',{
         templateUrl: 'partials/usuarios.html',
         controller: 'TabelaController'
@@ -16,6 +16,13 @@ angular.module('sun',['ngRoute'])
         
     });
 
+     $routeProvider.when('/login',{
+        templateUrl:'partials/login.html',
+        controller: 'LoginController'
+    });    
+
+
+   
     $routeProvider.otherwise({redirectTo: '/usuarios'});
 
 

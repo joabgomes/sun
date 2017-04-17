@@ -19,7 +19,7 @@ angular.module('sun').controller('TabelaController',function($scope,$http){
             $scope.mensagem = 'O usuário ' + usuario.nome + ' foi removido com sucesso!';
         }).catch(function(error){
             console.log(error);
-            $scope.mensagem = 'Ocorreu uma falha ao deletar o usuario ' + usuario.nome + ', tente novamente mais tarde.'
+            $scope.mensagem = 'Houve alguma falha ao deletar o usuario ' + usuario.nome + ', tente novamente mais tarde.'
         })
     };
 });

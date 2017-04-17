@@ -4,7 +4,7 @@
   <!-- VIEW DE CADASTRO -->
   <div class="row">
   	<div class="col-md-6">
-      <p ng-show="mensagem.length" class="alert alert-success">{{mensagem}}</p>
+      <p ng-show="mensagem.length" class="alert alert-danger">{{mensagem}}</p>
         <form novalidate class="form-horizontal" name="formulario" ng-submit="submeter()"> <!--CHAMA AÇÃO submeter no controller-->
           
           <fieldset>
@@ -57,8 +57,8 @@
               <div class="page-header">
                 </div>
                 <div class="controls">
-                    <button type="submit" class="btn btn-success" ng-disabled="formulario.$invalid">Registrar</button>
-                    <a href="/" class="btn btn-success">Voltar</a>
+                    <button type="submit" class="btn btn-success">Registrar</button>
+                    <a href="/#!/usuarios" class="btn btn-success">Voltar</a>
               </div>
             </div>
           </fieldset>

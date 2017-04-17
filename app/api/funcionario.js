@@ -19,19 +19,24 @@ api.lista = function(request,response){
 
 api.adiciona = function(request,response){
     var usuario = request.body;
+    var usuarioExistente = request.body.id;
    
-    model
-        .create (usuario)
-        .then (function(usuario){
-            response.json(usuario);
-        },function(error){
-            console.log(error);
-            response.status(500).json(error);
-
-            
-        });
-
-        
+    model.findOne({id:usuarioExistente})
+     .then(function(usuarioIgual){
+        if(usuarioIgual){
+            console.log('Já existe um usuário com este Id');
+            return response.status(302).json(usuarioIgual);
+        }else{
+            model.create(usuario)
+            .then (function(usuario){
+                response.json(usuario);
+            },function(error){
+                console.log(error);
+                response.status(500).json(error);
+            });
+       }
+   })
+      
 };
 
 api.buscaPorId = function(request,response){
