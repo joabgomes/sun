@@ -1,6 +1,6 @@
 module.exports = function(app){
 
-    var api = app.api.funcionario
+    var api = app.api.usuarios
 
     app.route('/v1/usuarios')
         .get(api.lista)

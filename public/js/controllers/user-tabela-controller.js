@@ -1,4 +1,4 @@
-angular.module('sun').controller('TabelaController',function($scope,$http){
+angular.module('sun').controller('TabelaUsuarioController',function($scope,$http){
 
     $scope.usuarios = [];
     $scope.mensagem = '';
