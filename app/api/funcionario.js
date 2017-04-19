@@ -13,8 +13,6 @@ api.lista = function(request,response){
             console.log(error);
             response.status(500).json(error);
         });
-
-        
 };
 
 api.adiciona = function(request,response){
