@@ -8,4 +8,5 @@ module.exports = function(app){
     app.delete('/v1/produtos/:id',api.delete);
     app.put('/v1/produtos/:id',api.atualiza);      
 
+
 };

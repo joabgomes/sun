@@ -13,17 +13,17 @@ var schema = mongoose.Schema({
     },
 
     tipo_item: {
-        type: String,
+        type: Number,
         require: true
     },
 
     unidade: {
-        type: String,
+        type: Number,
         require: true
     },
     
     marca: {
-        type: String,
+        type: Number,
         require: true
     },
 
@@ -33,7 +33,7 @@ var schema = mongoose.Schema({
     },
 
     status: {
-        type: String,
+        type: Number,
         require: true
     }
  

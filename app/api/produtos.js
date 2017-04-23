@@ -19,10 +19,10 @@ api.adiciona = function(request,response){
     var produto = request.body;
     
     modelProduto
-        .create({produto})
+        .create(produto)
         .then(function(produtoR){
             response.json(produtoR);
-        }, function(error){
+        },function(error){
             console.log(error);
             response.status(500).json(error);
         })
@@ -35,5 +35,7 @@ api.delete = function(request,response){
 api.atualiza = function(request,response){
 
 };
+
+
 
 module.exports = api;

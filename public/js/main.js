@@ -20,6 +20,11 @@ angular.module('sun',['ngRoute'])
         templateUrl:'partials/login.html',
         controller: 'LoginController'
     });    
+    
+    $routeProvider.when('/produtos/new',{
+        templateUrl:'partials/product-cadastro.html',
+        controller: 'CadastroProdutosController'
+    });
 
 
    
