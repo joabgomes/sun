@@ -1,67 +1,103 @@
-<div class="page-header">
-    <h2> Cadastro de Usuários</h2>
-</div>  <!--Fim do page-header-->
-  <!-- VIEW DE CADASTRO -->
-  <div class="row">
-  	<div class="col-md-6">
-      <p ng-show="mensagem.length" class="alert alert-danger">{{mensagem}}</p>
-        <form novalidate class="form-horizontal" name="formulario" ng-submit="submeter()"> <!--CHAMA AÇÃO submeter no controller-->
-          
-          <fieldset>
-              <div class="control-group">
-              <label class="control-label" for="nome">Nome</label>
-              <div class="controls">
-                <input type="text" ng-model="usuario.nome" id="nome" name="nome" placeholder="Nome" class="form-control input-lg" required>
-                <p class="help-block">Este campo pode conter letras e espaçamento entre os caracteres</p>
-                <p ng-show="formulario.$submitted && formulario.nome.$error.required" class="text-danger">*Este campo não pode ser nulo</p
-              </div>
-            </div>
+        <div class="right_col" role="main">
+                  <div class="">
+                    <div class="page-title">
+                      <div class="title_left">
+                        <h3>Cadastro de Usuários</h3>
+                      </div>
 
-            <div class="control-group">
-              <label class="control-label" for="username">Nome de Usuário</label>
-              <div class="controls">
-                <input type="text" ng-model="usuario.id" id="nm_usuario" name="nm_usuario" placeholder="ID" class="form-control input-lg" required ng-maxlength="20">
-                <p class="help-block">Este campo pode conter letras e números, sem espaçamento entre os caracteres</p>
-                <p ng-show="formulario.$submitted && formulario.nm_usuario.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
-                <p ng-show="formulario.$submitted && formulario.nm_usuario.$error.maxlength" class="text-danger">*Este campo não pode ter mais de 20 caracteres</p>
-              </div>
-            </div>
-         
-            <div class="control-group">
-              <label class="control-label" for="senha">Senha</label>
-              <div class="controls">
-                <input type="password" ng-model="usuario.senha" id="senha" name="senha" placeholder="Senha" class="form-control input-lg" required ng-minlength="3" ng-maxlength="15">
-                <p class="help-block">Este campo pode conter letras e números,sem espaçamentos entre os caracteres</p>
-                <p ng-show="formulario.$submitted && formulario.senha.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
-                <p ng-show="formulario.$submitted && formulario.senha.$error.minlength" class="text-danger">Este campo deve conter no minimo 3 caracteres e no máximo 15 </p>
-                <p ng-show="formulario.$submitted && formulario.senha.$error.maxlength" class="text-danger">Este campo deve conter no minimo 3 caracteres e no máximo 15 </p>
-              </div>
-            </div>
+                      <div class="title_right">
+                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                          <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                      <button class="btn btn-default" type="button">Go!</button>
+                                  </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
 
-            <div class="control-group">
-              <label class="control-label" for="nivel">Nivel de Acesso</label>
-              <div class="controls" >
-                
-                <div class="radio">
-                    <label><input  type="radio" ng-model="usuario.nivel" name="rb-usuario" ng-required="!nivel" value="User">Usuário</label>
-               </div>
-                
-                <div class="radio">
-                    <label><input  type="radio" ng-model="usuario.nivel" name="rb-admin" ng-required="!nivel" value="Admin" >Administrador</label>
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                          <div class="x_title">
+                            <h2>Cadastro de Usuários</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                              </li>
+                              <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#">Settings 1</a>
+                                  </li>
+                                  <li><a href="#">Settings 2</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li><a class="close-link"><i class="fa fa-close"></i></a>
+                              </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="x_content">
+
+                            <form class="form-horizontal form-label-left" novalidate name="formulario" ng-submit="submeter()">
+
+                              <span class="section">Digite as Informações</span>
+
+                              <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nome</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <input type="text" ng-model="usuario.nome" id="nome" name="nome" placeholder="Nome" required class="form-control col-md-7 col-xs-12">
+                                  <p ng-show="formulario.$submitted && formulario.nome.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
+                                </div>
+                              </div>
+                              <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <input type="text" ng-model="usuario.id" id="nm_usuario" name="nm_usuario" placeholder="ID"  required ng-maxlength="20" class="form-control col-md-7 col-xs-12">
+                                  <p ng-show="formulario.$submitted && formulario.nm_usuario.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
+                                  <p ng-show="formulario.$submitted && formulario.nm_usuario.$error.maxlength" class="text-danger">*Este campo não pode ter mais de 20 caracteres</p>
+                                </div>
+                              </div>
+                              <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Senha</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <input type="password" ng-model="usuario.senha" id="senha" name="senha" placeholder="Senha" required ng-minlength="3" ng-maxlength="15" class="form-control col-md-7 col-xs-12">
+                                  <p ng-show="formulario.$submitted && formulario.senha.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
+                                  <p ng-show="formulario.$submitted && formulario.senha.$error.minlength" class="text-danger">Este campo deve conter no minimo 3 caracteres e no máximo 15 </p>
+                                  <p ng-show="formulario.$submitted && formulario.senha.$error.maxlength" class="text-danger">Este campo deve conter no minimo 3 caracteres e no máximo 15 </p>
+                                </div>
+                              </div>
+                              <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Nível de Acesso</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="radio">
+                                      <label><input  type="radio" ng-model="usuario.nivel" name="rb-usuario" ng-required="!nivel" value="User">Usuário</label>
+                                 </div>
+                                  <div class="radio">
+                                      <label><input  type="radio" ng-model="usuario.nivel" name="rb-admin" ng-required="!nivel" value="Admin" >Administrador</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Descrição</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12"></textarea>
+                                </div>
+                              </div>
+                              <div class="ln_solid"></div>
+                              <div class="form-group">
+                                <div class="col-md-6 col-md-offset-3">
+                                  <button type="submit" class="btn btn-success">Registrar</button>
+                                  <a href="/#!/usuarios" class="btn btn-success">Voltar</a>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-              </div>
-            </div>
-
-            <div class="control-group">
-              <div class="page-header">
-                </div>
-                <div class="controls">
-                    <button type="submit" class="btn btn-success">Registrar</button>
-                    <a href="/#!/usuarios" class="btn btn-success">Voltar</a>
-              </div>
-            </div>
-          </fieldset>
-        </form>   
-    </div> 
-  </div>

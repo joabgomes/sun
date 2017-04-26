@@ -1,74 +1,74 @@
 angular.module('sun').controller('TipoItemController',function($scope){
 
     $scope.items =[{
-        
-        _id: 1,
+
+        _id: 'Produtos',
         nome: 'Produtos',
-       
+
         }, {
-        _id: 2,
+        _id: 'Servicos',
         nome: 'Servicos',
-       
+
 
         }];
-    
-    
+
+
 });
 
 angular.module('sun').controller('UnidadesController',function($scope){
 
     $scope.unidades =[{
-        
-        _id: 1,
+
+        _id: 'Unidade',
         nome: 'Unidade',
-       
+
         }, {
-        _id: 2,
+        _id: 'Caixa',
         nome: 'Caixa',
-        
+
         }, {
-        _id: 3,
+        _id: 'Kilograma',
         nome: 'Kilograma',
 
         }, {
-        _id: 4,
+        _id: 'Hora',
         nome: 'Hora',
-    
+
        }];
-    
-    
+
+
 });
 
 angular.module('sun').controller('MarcasController',function($scope){
 
     $scope.marcas =[{
-        
-        _id: 1,
+
+        _id: 'Marca 1',
         nome: 'Marca 1',
-       
+
         }, {
-        _id: 2,
+        _id: 'Marca 2',
         nome: 'Marca 2',
-        
-            
+
+
        }];
-    
-    
+
+
 });
 
 angular.module('sun').controller('StatusController',function($scope){
 
     $scope.status =[{
-        
-        _id: 1,
+
+        _id: 'Ativo',
         nome: 'Ativo',
-       
+
         }, {
-        _id: 2,
+        _id: 'Inativo',
         nome: 'Inativo',
-        
-            
+
+
        }];
-    
-    
+
+
 });

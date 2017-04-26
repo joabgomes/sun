@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var schema = mongoose.Schema({
 
     cd_barras: {
-        type: String,
+        type: Number,
         require: true
     },
 
@@ -13,17 +13,17 @@ var schema = mongoose.Schema({
     },
 
     tipo_item: {
-        type: Number,
+        type: String,
         require: true
     },
 
     unidade: {
-        type: Number,
+        type: String,
         require: true
     },
-    
+
     marca: {
-        type: Number,
+        type: String,
         require: true
     },
 
@@ -33,9 +33,9 @@ var schema = mongoose.Schema({
     },
 
     status: {
-        type: Number,
+        type: String,
         require: true
     }
- 
+
 });
 mongoose.model('Produto',schema);

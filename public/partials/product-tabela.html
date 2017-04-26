@@ -1,0 +1,39 @@
+<div class="page-header">
+    <h2> Lista de Produtos</h2>
+</div>  <!--Fim do page-header-->
+
+<p class="alert alert-info" ng-show="mensagem.length">
+	{{mensagem}}
+</p>
+
+<div>
+    <input class="form-control" placeholder="Buscar" ng-model="filtro" ng-model-options="{ debounce: 200 }">
+</div>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Código de Barras</th>
+            <th>Nome do Produto</th>
+            <th>Tipo do Item</th>
+            <th>Unidade</th>
+            <th>Ação</th>
+        </tr>
+     </thead>
+
+    <tbody>
+        <tr ng-repeat="produto in produtos |filter:filtro ">
+            <td>{{produto.cd_barras}}</td>
+            <td>{{produto.nm_item}}</td>
+            <td>{{produto.tipo_item}}</td>
+            <td>{{produto.unidade}}</td>
+            <td>
+              <a title="Excluir"class="btn glyphicon glyphicon-trash" ng-click="removerProduto(produto)" ></a>
+              <a title="Editar"class="btn glyphicon glyphicon-pencil" href="#!/produtos/edit/{{produto._id}}"></a>
+            </td>
+         </tr>
+
+    </tbody>
+</table>
+<a href="/#!/produtos/new" type="button" class="btn btn-primary">Novo Produto</a>
+<a ng-click"removerTodos(produtos)" class="btn btn-danger">Não Aperte</a>

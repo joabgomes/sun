@@ -3,9 +3,9 @@
 </div>
 
 <form class="form-horizontal" name="formProdutos" ng-submit="submeterProduto()">
- 
+
  <fieldset>
-    
+
     <div class="col-lg-12 form-group margin50">
       <label class="col-lg-2"  for="cd_barras">Código de Barras</label>
       <div class="col-lg-4">
@@ -21,13 +21,13 @@
     </div>
 
     <div class=" col-lg-12 form-group">
-      <label class="col-lg-2" >Tipo do Item</label>
+      <label class="col-lg-2" for="tipo_item" >Tipo do Item</label>
       <div class="col-lg-4">
-         <select name="item" 
-                    ng-model="produto.item" class="form-control" 
+         <select name="item"
+                    ng-model="produto.tipo_item" class="form-control"
                     ng-controller="TipoItemController"
                     ng-options="item._id as (item.nome | uppercase) for item in items">
-                <option value="">Escolha um grupo</option>
+                <option value="">Selecione o Tipo do Item</option>
             </select>
       </div>
     </div>
@@ -35,44 +35,44 @@
      <div class="col-lg-12 form-group">
       <label class="col-lg-2" for="unidade">Unidade</label>
       <div class="col-lg-4">
-        <select ng-model="produto.unidade"  class="form-control manufacturer"
+        <select ng-model="produto.unidade"  class="form-control"
                 ng-controller="UnidadesController"
                 ng-options="unidade._id as (unidade.nome | uppercase) for unidade in unidades">
             <option value="">Selecione a unidade</option>
         </select>
       </div>
     </div>
-    
+
     <div class="col-lg-12 form-group">
       <label class="col-lg-2" for="marca">Marca</label>
       <div class="col-lg-4">
-        <select ng-model="produto.marca" class="form-control distributor"
+        <select ng-model="produto.marca" class="form-control"
                 ng-controller="MarcasController"
                 ng-options="marca._id as (marca.nome | uppercase) for marca in marcas">
             <option value="">Selecione a Marca do Produto</option>
         </select>
       </div>
     </div>
-    
- 
+
+
     <div class="col-lg-12 form-group">
       <label class="col-lg-2" for="modelo">Modelo</label>
       <div class="col-lg-4">
         <input ng-model="produto.modelo" type="text" id="modelo" name="modelo" placeholder="Modelo" class="form-control sku">
       </div>
     </div>
- 
+
  <div class="col-lg-12 form-group">
-      <label class="col-lg-2" for="marca">Selecione o Status</label>
+      <label class="col-lg-2" for="status">Status do Produto</label>
       <div class="col-lg-4">
-        <select ng-model="produto.status"  class="form-control distributor"
+        <select ng-model="produto.status"  class="form-control "
                 ng-controller="StatusController"
                 ng-options="status._id as (status.nome | uppercase) for status in status">
-            <option value="">Status do Produto</option>
+            <option value="">Selecione o Status</option>
         </select>
       </div>
     </div>
-   
+
     <div class="col-lg-12 ">
         <div class="control-group">
            <div class="page-header">

@@ -7,9 +7,10 @@ angular.module('sun')
         $scope.autenticar = function(){
 
             var usuario = $scope.usuario;
+            console.log(usuario);
 
             $http.post('/autenticar', {
-                id: usuario.login, 
+                id: usuario.login,
                 senha: usuario.senha
             })
             .then(function(){

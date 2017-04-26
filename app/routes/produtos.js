@@ -5,8 +5,9 @@ module.exports = function(app){
     app.get('/v1/produtos',api.lista);
     app.post('/v1/produtos',api.adiciona);
 
-    app.delete('/v1/produtos/:id',api.delete);
-    app.put('/v1/produtos/:id',api.atualiza);      
-
+    app.route('/v1/produtos/:id')
+        .get(api.buscarPorId)
+        .delete(api.delete)
+        .put(api.atualiza);
 
 };
