@@ -1,0 +1,64 @@
+<div class="page-header">
+    <h2> Tabela de Produtos Comprados </h2>
+</div> <!-- Fim do page-header-->
+
+<p class="alert alert-info" ng-show="mensagem.lenght">
+    {{mensagem}}
+</p>
+
+<div>
+    <input class="form-control" placeholder="Buscar " ng-model="filtro" ng-model-options="{ debounce: 200}">
+</div>
+
+<table class="table">
+    
+    <thead>
+        <tr>
+            <th>N°. Nota Fiscal</th>
+            <th>Codigo do Produto</th>
+            <th>Nome do produto</th>
+            <th>Quantidade Recebida</th>
+            <th>Valor Total</th>
+            <th>Valor Unitário</th>
+            <th>Data de Fabricação</th>
+            <th>Data de Validade</th>
+            <th>Código EAN</th>
+            <th>Estoque do Produto</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="formulario in formularios |filter:filtro ">
+            <td>{{formulario.nota_fiscal}}</td>
+            <td>{{formulario.codigo}}</td>
+            <td>{{formulario.produto}}</td>
+            <td>{{formulario.quantidade}}</td>
+            <td>{{formulario.valor_total}}</td>
+            <td>{{formulario.valor_unitario}}</td>
+            <td>{{formulario.data_fabricacao}}</td>
+            <td>{{formulario.validade}}</td>
+            <td>{{formulario.codigo_ean}}</td>
+            <td>{{formulario.estoque}}</td>
+            
+            <td><button ng-click"removerFormulario(formulario)" class="btn btn-danger">Excluir cadastro de produto </button></td>
+
+        </tr>
+    </tbody>
+</table>
+<a href="/#!/formularios/new" type="button" class="btn btn-primary">Registrar Nova Nota</a>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+

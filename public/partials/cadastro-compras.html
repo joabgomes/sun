@@ -1,0 +1,100 @@
+<form class="form-horizontal" ng-submit="submeter()">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Formulario para cadastrar produtos</legend>
+
+<!-- NOTA FISCAL-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nota_fical">N°. Nota Fiscal : </label>  
+  <div class="col-md-6">
+  <input id="nota_fical" ng-model="formulario.nota_fiscal" id="nota_fical" name="nota_fical" type="text" placeholder="Numero da Nota Fiscal" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- CODIGO DO PRODUTO-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="codigo">Codigo : </label>  
+  <div class="col-md-6">
+  <input id="codigo" ng-model="formulario.codigo" id="codigo" name="codigo" type="text" placeholder="Codigo do Produto" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- NOME DO PRODUTO-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="produto">Produto : </label>  
+  <div class="col-md-6">
+  <input id="produto" ng-model="formulario.produto" id="produto" name="produto" type="text" placeholder="Nome do Produto" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- QUANTIDADE DE PRODUTO RECEBIDA-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="quantidade">Quantidade Recebida : </label>  
+  <div class="col-md-6">
+  <input id="quantidade" ng-model="formulario.quantidade" id="quantidade" name="quantidade" type="text" placeholder="Quantidade Recebida" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Valor Total-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="valor_total">Valor Total : </label>  
+  <div class="col-md-6">
+  <input id="valor_total" ng-model="formulario.valor_total" id="valor_total" name="valor_total" type="text" placeholder="Valor Total" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Valor Unitario-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="valor_unitario">Valor Unitario : </label>  
+  <div class="col-md-6">
+  <input id="valor_unitario" ng-model="formulario.valor_unitario" id="valor_unitario" name="valor_unitario" type="text" placeholder="Valor Unitario" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- DATA DE FABRICAÇÃO-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="data_fabricacao">Data de Fabricação : </label>  
+  <div class="col-md-6">
+  <input id="data_fabricacao" ng-model="formulario.data_fabricacao" id="data_fabricacao" name="data_fabricacao" type="text" placeholder="Data de Fabricação" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- VALIDADE DO PRODUTO-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="validade">Validade do Produto : </label>  
+  <div class="col-md-6">
+  <input id="validade" ng-model="formulario.validade" id="validade" name="validade" type="text" placeholder="Validade do Produto" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- CODIGO EAN-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="codigo_ean">Codigo EAN : </label>  
+  <div class="col-md-6">
+  <input id="codigo_ean" ng-model="formulario.codigo_ean" id="codigo_ean" name="codigo_ean" type="text" placeholder="Codigo EAN" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="btnsalvar"></label>
+  <div class="col-md-8">
+    <button type="submit" id="btnsalvar" name="btnsalvar" class="btn btn-primary"> Salvar</button>
+    <button id="btncancelar" name="btncancelar" class="btn btn-danger">Cancelar</button>
+    <a href="/#!/listaCompras" name="btnvoltar" class="btn btn-success">Voltar</a>
+
+  </div>
+</div>
+
+</fieldset>
+</form>

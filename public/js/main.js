@@ -45,6 +45,16 @@ angular.module('sun',['ngRoute'])
         controller: 'LoginController'
     });
 
+     $routeProvider.when('/listaCompras',{
+        templateUrl:'partials/lista-compras.html',
+       controller: 'ListaCompraController'
+    });
+
+     $routeProvider.when('/cadastroCompras',{
+        templateUrl:'partials/cadastro-compras.html',
+        controller: 'CadastroCompraController'
+        
+    });
 
 
 
