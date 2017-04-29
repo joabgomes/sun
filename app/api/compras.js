@@ -17,18 +17,14 @@ api.lista = function(request,response){
 
 api.adiciona = function(request,response){
     var compra = request.body;
-    var compraExistente = request.body.id;
-   
-    model.findOne({id:compraExistente})
-    
-      
-            model.create(compra)
-            .then (function(compra){
-                response.json(compra);
-            },function(error){
-                console.log(error);
-                response.status(500).json(error);
-            });
+ 
+        model.create(compra)
+        .then(function(compra){
+            response.json(compra);
+        },function(error){
+            console.log(error);
+            response.status(500).json(error);
+        });
       
    
       

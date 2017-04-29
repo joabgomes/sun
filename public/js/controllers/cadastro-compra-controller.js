@@ -1,13 +1,19 @@
 angular.module('sun').controller('CadastroCompraController', function($scope,$http,$location){
 
-    $scope.compra = {};
+    $scope.compras = {};
+    $scope.parseFloat = parseFloat;
 
-    $scope.submeter = function() {
+    $http.get('/v1/produtos').then(function(retorno){
+        $scope.compras = retorno.data;
+    });
+    
+
+    $scope.submeterCompra = function() {
 
         console.log($scope.compra);
-        var promisse = $http.post('/v1/compras',$scope.compra);
+        var promisse = $http.post('/v1/compras',$scope.compras);
             promisse.then(function(retorno){
-                $scope.compra = retorno.data;
+                $scope.compras = retorno.data;
                 $location.path('/listaCompras')
                 $scope.compra = {};
             }).catch(function(error){

@@ -1,4 +1,4 @@
-<form class="form-horizontal" ng-submit="submeter()">
+<form class="form-horizontal" ng-submit="submeterCompra()">
 <fieldset>
 
 <!-- Form Name -->
@@ -8,7 +8,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="nota_fical">N°. Nota Fiscal : </label>  
   <div class="col-md-6">
-  <input id="nota_fical" ng-model="formulario.nota_fiscal" id="nota_fical" name="nota_fical" type="text" placeholder="Numero da Nota Fiscal" class="form-control input-md" required="">
+  <input id="nota_fical" ng-model="compras.nota_fiscal" id="nota_fical" name="nota_fical" type="text" placeholder="Numero da Nota Fiscal" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -17,44 +17,46 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="codigo">Codigo : </label>  
   <div class="col-md-6">
-  <input id="codigo" ng-model="formulario.codigo" id="codigo" name="codigo" type="text" placeholder="Codigo do Produto" class="form-control input-md" required="">
-    
+  <input id="codigo" ng-model="compras.codigo" id="codigo" name="codigo" type="text" placeholder="Codigo do Produto" class="form-control input-md" required="">
   </div>
 </div>
 
 <!-- NOME DO PRODUTO-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="produto">Produto : </label>  
-  <div class="col-md-6">
-  <input id="produto" ng-model="formulario.produto" id="produto" name="produto" type="text" placeholder="Nome do Produto" class="form-control input-md" required="">
-    
-  </div>
-</div>
+      <label class="col-md-4 control-label" for="unidade">Produto :</label>
+      <div class="col-md-6">
+        <select ng-model="compras.produto"  class="form-control"
+                ng-options="compra._id as (compra.nm_item | uppercase) for compra in compras">
+            <option value="">Selecione o Produto</option>
+        </select>
+      </div>
+    </div>
 
 <!-- QUANTIDADE DE PRODUTO RECEBIDA-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="quantidade">Quantidade Recebida : </label>  
   <div class="col-md-6">
-  <input id="quantidade" ng-model="formulario.quantidade" id="quantidade" name="quantidade" type="text" placeholder="Quantidade Recebida" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Valor Total-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="valor_total">Valor Total : </label>  
-  <div class="col-md-6">
-  <input id="valor_total" ng-model="formulario.valor_total" id="valor_total" name="valor_total" type="text" placeholder="Valor Total" class="form-control input-md" required="">
+  <input id="quantidade" ng-model="compras.quantidade" id="quantidade" name="quantidade" type="text" placeholder="Quantidade Recebida" class="form-control input-md" required="">
     
   </div>
 </div>
 
 <!-- Valor Unitario-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="valor_unitario">Valor Unitario : </label>  
+  <label class="col-md-4 control-label" for="valor_unitario">Valor Unitario R$ : </label>  
   <div class="col-md-6">
-  <input id="valor_unitario" ng-model="formulario.valor_unitario" id="valor_unitario" name="valor_unitario" type="text" placeholder="Valor Unitario" class="form-control input-md" required="">
+  <input id="valor_unitario" ng-model="compras.valor_unitario" id="valor_unitario" name="valor_unitario" type="text" placeholder="Valor Unitario" class="form-control input-md" required="">
     
+  </div>
+</div>
+
+<!-- Valor Total-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="valor_total">Valor Total R$ : </label>  
+  <div class="col-md-6">
+    <label id="valor_total" ng-model="compras.valor_total" id="valor_total" name="valor_total" type="text" placeholder="Valor Total" class="form-control input-md" required="">
+      {{((compras.quantidade * 1) * (compras.valor_unitario * 1))}}
+    </label>
   </div>
 </div>
 
@@ -62,7 +64,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="data_fabricacao">Data de Fabricação : </label>  
   <div class="col-md-6">
-  <input id="data_fabricacao" ng-model="formulario.data_fabricacao" id="data_fabricacao" name="data_fabricacao" type="text" placeholder="Data de Fabricação" class="form-control input-md" required="">
+  <input id="data_fabricacao" ng-model="compras.data_fabricacao" id="data_fabricacao" name="data_fabricacao" type="text" placeholder="Data de Fabricação" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -71,7 +73,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="validade">Validade do Produto : </label>  
   <div class="col-md-6">
-  <input id="validade" ng-model="formulario.validade" id="validade" name="validade" type="text" placeholder="Validade do Produto" class="form-control input-md" required="">
+  <input id="validade" ng-model="compras.validade" id="validade" name="validade" type="text" placeholder="Validade do Produto" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -80,7 +82,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="codigo_ean">Codigo EAN : </label>  
   <div class="col-md-6">
-  <input id="codigo_ean" ng-model="formulario.codigo_ean" id="codigo_ean" name="codigo_ean" type="text" placeholder="Codigo EAN" class="form-control input-md" required="">
+  <input id="codigo_ean" ng-model="compras.codigo_ean" id="codigo_ean" name="codigo_ean" type="text" placeholder="Codigo EAN" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -90,7 +92,7 @@
   <label class="col-md-4 control-label" for="btnsalvar"></label>
   <div class="col-md-8">
     <button type="submit" id="btnsalvar" name="btnsalvar" class="btn btn-primary"> Salvar</button>
-    <button id="btncancelar" name="btncancelar" class="btn btn-danger">Cancelar</button>
+    <button id="btncancelar" name="btncancelar" type="reset" class="btn btn-danger">Cancelar</button>
     <a href="/#!/listaCompras" name="btnvoltar" class="btn btn-success">Voltar</a>
 
   </div>

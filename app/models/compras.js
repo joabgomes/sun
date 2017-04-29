@@ -13,7 +13,7 @@ var schema = mongoose.Schema({
     },
 
     produto: {
-        type: String,
+        type: Number,
         require: true
     },
 
@@ -22,23 +22,24 @@ var schema = mongoose.Schema({
         require: true
     },
 
-    valor_total: {
-        type: Number,
-        require: true
-    },
 
     valor_unitario: {
         type: Number,
         require: true
     },
 
-    data_fabricacao: {
+     valor_total: {
         type: Number,
         require: true
     },
 
+    data_fabricacao: {
+        type: String,
+        require: true
+    },
+
     validade: {
-        type: Number,
+        type: String,
         require: true
     },
 

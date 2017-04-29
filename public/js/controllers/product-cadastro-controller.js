@@ -2,7 +2,7 @@ angular.module('sun').controller('CadastroProdutosController', function($scope,$
 
     $scope.produto = {};
 
-    $scope.submeterProduto = function() {
+    $scope.submeterCompra = function() {
         var promisse = $http.post('/v1/produtos/',$scope.produto);
             promisse.then(function(retorno){
                 $scope.produto = retorno.data;
