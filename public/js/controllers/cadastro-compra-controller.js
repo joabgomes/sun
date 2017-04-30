@@ -3,9 +3,11 @@ angular.module('sun').controller('CadastroCompraController', function($scope,$ht
     $scope.compras = {};
     $scope.parseFloat = parseFloat;
 
-    $http.get('/v1/produtos').then(function(retorno){
-        $scope.compras = retorno.data;
-    });
+  /*  $http.get('/v1/produtos').then(function(retorno){
+       
+    }); */ // Pegando os itens da tabela ;
+
+
     
 
     $scope.submeterCompra = function() {
@@ -13,6 +15,7 @@ angular.module('sun').controller('CadastroCompraController', function($scope,$ht
         console.log($scope.compra);
         var promisse = $http.post('/v1/compras',$scope.compras);
             promisse.then(function(retorno){
+                
                 $scope.compras = retorno.data;
                 $location.path('/listaCompras')
                 $scope.compra = {};

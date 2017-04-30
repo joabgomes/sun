@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 var api = {};
 
-var model = mongoose.model('Compra');
+var modelCompra = mongoose.model('Compra');
 
 api.lista = function(request,response){
    
-    model
+    modelCompra
         .find({})
         .then(function(compras){
             response.json(compras);
@@ -18,9 +18,10 @@ api.lista = function(request,response){
 api.adiciona = function(request,response){
     var compra = request.body;
  
-        model.create(compra)
-        .then(function(compra){
-            response.json(compra);
+        modelCompra
+        .create(compra)
+        .then(function(compraR){
+            response.json(compraR);
         },function(error){
             console.log(error);
             response.status(500).json(error);
@@ -36,7 +37,7 @@ api.buscaPorId = function(request,response){
 
 api.deletaPorId = function(request,response){
 
-    model  
+    modelCompra 
         .remove({_id: request.params.id})
         .then (function(){
             response.sendStatus(204);

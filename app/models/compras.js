@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
+
 var schema = mongoose.Schema({
 
     nota_fical: {
@@ -13,10 +14,9 @@ var schema = mongoose.Schema({
     },
 
     produto: {
-        type: Number,
+        type:String,
         require: true
     },
-
     quantidade: {
         type: Number,
         require: true
@@ -46,11 +46,8 @@ var schema = mongoose.Schema({
     codigo_ean: {
         type: Number,
         require: true
-    },
-    estoque: {
-        type: Number,
-        require: true
     }
+
     
 });
 mongoose.model('Compra',schema);
