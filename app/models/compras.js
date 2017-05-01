@@ -14,13 +14,16 @@ var schema = mongoose.Schema({
     },
 
     produto: {
-        type:String,
-        require: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Produto'
+        
     },
     quantidade: {
         type: Number,
         require: true
     },
+
+    
 
 
     valor_unitario: {

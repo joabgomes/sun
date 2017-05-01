@@ -1,22 +1,24 @@
 angular.module('sun').controller('CadastroCompraController', function($scope,$http,$location){
 
     $scope.compras = {};
+    $scope.produtos = {};
     $scope.parseFloat = parseFloat;
 
-  /*  $http.get('/v1/produtos').then(function(retorno){
+    $http.get('/v1/produtos').then(function(retorno){
        
-    }); */ // Pegando os itens da tabela ;
+       var produto = $scope.produtos = retorno.data;
+       
+
+    }); 
 
 
     
 
-    $scope.submeterCompra = function() {
+    $scope.submeterCompra = function(produto) {
 
-        console.log($scope.compra);
         var promisse = $http.post('/v1/compras',$scope.compras);
             promisse.then(function(retorno){
-                
-                $scope.compras = retorno.data;
+                $scope.compras = produto, retorno.data;
                 $location.path('/listaCompras')
                 $scope.compra = {};
             }).catch(function(error){
