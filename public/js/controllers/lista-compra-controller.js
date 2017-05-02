@@ -10,12 +10,11 @@ angular.module('sun').controller('ListaCompraController',function($scope,$http){
       console.log(error);
     })
 
-    $scope.removerCompras = function(compras) {
-      console.log(compras);
-      var promisse = $http.delete('/v1/compras/' + compras._id);
-
-      promisse.then(function(){
-          var indiceCompras = $scope.compras.indexOf(compras);
+    $scope.removerCompra = function(compra) {
+     
+       $http.delete('/v1/compras/' + compra._id).then(function(){
+         
+         var indiceCompra = $scope.compras.indexOf(compra);
           $scope.compras.splice(indiceCompra, 1);
 
       }).catch(function(error){

@@ -28,24 +28,24 @@
     </thead>
 
     <tbody>
-        <tr ng-repeat="formulario in formularios |filter:filtro ">
-            <td>{{formulario.nota_fiscal}}</td>
-            <td>{{formulario.codigo}}</td>
-            <td>{{formulario.produto}}</td>
-            <td>{{formulario.quantidade}}</td>
-            <td>{{formulario.valor_total}}</td>
-            <td>{{formulario.valor_unitario}}</td>
-            <td>{{formulario.data_fabricacao}}</td>
-            <td>{{formulario.validade}}</td>
-            <td>{{formulario.codigo_ean}}</td>
-            <td>{{formulario.estoque}}</td>
+        <tr ng-repeat="compra in compras |filter:filtro ">
+            <td>{{compra.nota_fiscal}}</td>
+            <td>{{compra.codigo}}</td>
+            <td>{{compra.produto}}</td>
+            <td>{{compra.quantidade}}</td>
+            <td>{{compra.valor_total}}</td>
+            <td>{{compra.valor_unitario}}</td>
+            <td>{{compra.data_fabricacao}}</td>
+            <td>{{compra.validade}}</td>
+            <td>{{compra.codigo_ean}}</td>
+            <td>{{compra.estoque}}</td>
             
-            <td><button ng-click"removerFormulario(formulario)" class="btn btn-danger">Excluir cadastro de produto </button></td>
+            <td><button ng-click="removerCompra(compra)" class="btn btn-danger">Excluir</button></td>
 
         </tr>
     </tbody>
 </table>
-<a href="/#!/formularios/new" type="button" class="btn btn-primary">Registrar Nova Nota</a>
+<a href="/#!/cadastroCompras/new" type="button" class="btn btn-primary">Registrar Nova Nota</a>
 
             
 

@@ -50,7 +50,7 @@ angular.module('sun',['ngRoute'])
        controller: 'ListaCompraController'
     });
 
-     $routeProvider.when('/cadastroCompras',{
+     $routeProvider.when('/cadastroCompras/new',{
         templateUrl:'partials/cadastro-compras.html',
         controller: 'CadastroCompraController'
         
