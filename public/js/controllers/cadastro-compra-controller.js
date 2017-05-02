@@ -1,4 +1,4 @@
-angular.module('sun').controller('CadastroCompraController', function($scope,$http,$location){
+angular.module('sun').controller('CadastroCompraController', function($scope,$http,$location,){
 
     $scope.compras = {};
     $scope.produtos = {};
@@ -8,11 +8,9 @@ angular.module('sun').controller('CadastroCompraController', function($scope,$ht
        
        var produto = $scope.produtos = retorno.data;
        
-
-    }); 
-
-
-    
+    }).catch(function(error){
+        console.log(error);
+    });
 
     $scope.submeterCompra = function(produto) {
 
@@ -23,9 +21,7 @@ angular.module('sun').controller('CadastroCompraController', function($scope,$ht
                 $scope.compra = {};
             }).catch(function(error){
                 console.log(error);
-            })
-
-    }
-
+            });
+    };
 
 });

@@ -29,8 +29,8 @@ angular.module('sun',['ngRoute'])
     });
 
     $routeProvider.when('/produtos/edit/:produtoId',{
-        templateUrl:'partials/editar-produto.html',
-        controller: 'EditarProdutoController'
+        templateUrl:'partials/product-cadastro.html',
+        controller: 'CadastroProdutosController'
     });
 
 
