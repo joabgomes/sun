@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 var schema = mongoose.Schema({
 
-    nota_fical: {
+    nota_fiscal: {
         type: Number,
         require: true
     },
