@@ -10,7 +10,6 @@
     <input class="form-control" placeholder="Buscar" ng-model="filtro" ng-model-options="{ debounce: 200 }">
 </div>
 <table class="table">
-    
     <thead>
         <tr>
             <th>Nome</th>
@@ -24,8 +23,9 @@
             <td>{{usuario.nome}}</td>
             <td>{{usuario.id}}</td>
             <td>{{usuario.nivel}}</td>
-            <td> <button ng-click="removerUser(usuario)" class="btn btn-danger">Excluir</button></td>
-            
+            <td> 
+                <a href="" title="Excluir" class=" center btn glyphicon glyphicon-trash" ng-click="removerUser(usuario)" ></a>
+            </td>
          </tr>
     </tbody>
 </table>  

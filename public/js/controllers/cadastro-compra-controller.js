@@ -14,6 +14,8 @@ angular.module('sun').controller('CadastroCompraController', function($scope,$ht
 
     $scope.submeterCompra = function(produto) {
 
+        if($scope.formularioCompra.$valid){
+
         var promisse = $http.post('/v1/compras',$scope.compras);
             promisse.then(function(retorno){
                 $scope.compras = produto, retorno.data;
@@ -22,6 +24,8 @@ angular.module('sun').controller('CadastroCompraController', function($scope,$ht
             }).catch(function(error){
                 console.log(error);
             });
-    };
+        };
+
+    }
 
 });

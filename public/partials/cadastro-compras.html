@@ -1,4 +1,4 @@
-<form class="form-horizontal" ng-submit="submeterCompra()">
+<form class="form-horizontal" novalidate name="formularioCompra" ng-submit="submeterCompra()">
 <fieldset>
 
 <!-- Form Name -->
@@ -8,8 +8,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="nota_fical">N°. Nota Fiscal : </label>  
   <div class="col-md-6">
-  <input id="nota_fical" ng-model="compras.nota_fiscal" id="nota_fical" name="nota_fical" type="text" placeholder="Numero da Nota Fiscal" class="form-control input-md" required="">
-    
+    <input id="nota_fical" ng-model="compras.nota_fiscal" id="nota_fical" name="nota_fical" type="text" placeholder="Numero da Nota Fiscal" class="form-control input-md" required>
+    <p ng-show="formularioCompra.$submitted && formularioCompra.nota_fiscal.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
   </div>
 </div>
 
@@ -17,7 +17,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="codigo">Codigo : </label>  
   <div class="col-md-6">
-  <input id="codigo" ng-model="compras.codigo" id="codigo" name="codigo" type="text" placeholder="Codigo do Produto" class="form-control input-md" required="">
+    <input id="codigo" ng-model="compras.codigo" id="codigo" name="codigo" type="text" placeholder="Codigo do Produto" class="form-control input-md" required>
+    <p ng-show ="formularioCompra.$submitted && formularioCompra.codigo.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
   </div>
 </div>
 
@@ -26,9 +27,10 @@
       <label class="col-md-4 control-label" for="unidade">Produto :</label>
       <div class="col-md-6">
         <select ng-model="compras.produto"  class="form-control"
-                ng-options="produto._id as (produto.nm_item | uppercase) for produto in produtos">
+                ng-options="produto._id as (produto.nm_item | uppercase) for produto in produtos" required>
             <option value="">Selecione o Produto</option>
         </select>
+        <p ng-show="formularioCompra.$submitted && formularioCompra.nm_item.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
       </div>
     </div> 
 
@@ -37,8 +39,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="quantidade">Quantidade Recebida : </label>  
   <div class="col-md-6">
-  <input id="quantidade" ng-model="compras.quantidade" id="quantidade" name="quantidade" type="text" placeholder="Quantidade Recebida" class="form-control input-md" required="">
-    
+    <input id="quantidade" ng-model="compras.quantidade" id="quantidade" name="quantidade" type="text" placeholder="Quantidade Recebida" class="form-control input-md" required>
+    <p ng-show="formularioCompra.$submitted && formularioCompra.quantidade.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
   </div>
 </div>
 
@@ -46,8 +48,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="valor_unitario">Valor Unitario R$ : </label>  
   <div class="col-md-6">
-    <input id="valor_unitario" ng-model="compras.valor_unitario" id="valor_unitario" name="valor_unitario" type="text" placeholder="Valor Unitario" class="form-control input-md" required="">
-    
+    <input id="valor_unitario" ng-model="compras.valor_unitario" id="valor_unitario" name="valor_unitario" type="text" placeholder="Valor Unitario" class="form-control input-md" required>
+    <p ng-show="formularioCompra.$submitted && formularioCompra.valor_unitario.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
   </div>
 </div>
 
@@ -55,7 +57,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="valor_total">Valor Total R$ : </label>  
   <div class="col-md-6">
-    <input disabled id="valor_total" class="form-control input-md" value="{{((compras.quantidade * 1) * (compras.valor_unitario * 1))}}" required="">
+    <input disabled id="valor_total" class="form-control input-md" value="{{((compras.quantidade * 1) * (compras.valor_unitario * 1))}}" >
   </div>
 </div>
 
@@ -63,8 +65,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="data_fabricacao">Data de Fabricação : </label>  
   <div class="col-md-6">
-  <input id="data_fabricacao" ng-model="compras.data_fabricacao" id="data_fabricacao" name="data_fabricacao" type="text" placeholder="Data de Fabricação" class="form-control input-md" required="">
-    
+    <input id="data_fabricacao" ng-model="compras.data_fabricacao" id="data_fabricacao" name="data_fabricacao" type="text" placeholder="Data de Fabricação" class="form-control input-md" >
+    <p ng-show="formularioCompra.$submitted && formularioCompra.data_fabricacao.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
   </div>
 </div>
 
@@ -72,8 +74,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="validade">Validade do Produto : </label>  
   <div class="col-md-6">
-  <input id="validade" ng-model="compras.validade" id="validade" name="validade" type="text" placeholder="Validade do Produto" class="form-control input-md" required="">
-    
+    <input id="validade" ng-model="compras.validade" id="validade" name="validade" type="text" placeholder="Validade do Produto" class="form-control input-md" required >
+    <p ng-show="formularioCompra.$submitted && formularioCompra.validade.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
   </div>
 </div>
 
@@ -81,8 +83,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="codigo_ean">Codigo EAN : </label>  
   <div class="col-md-6">
-  <input id="codigo_ean" ng-model="compras.codigo_ean" id="codigo_ean" name="codigo_ean" type="text" placeholder="Codigo EAN" class="form-control input-md" required="">
-    
+    <input id="codigo_ean" ng-model="compras.codigo_ean" id="codigo_ean" name="codigo_ean" type="text" placeholder="Codigo EAN" class="form-control input-md" required >
+    <p ng-show="formularioCompra.$submitted && formularioCompra.codigo_ean.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
   </div>
 </div>
 
@@ -90,10 +92,9 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="btnsalvar"></label>
   <div class="col-md-8">
-    <button type="submit" id="btnsalvar" name="btnsalvar" class="btn btn-primary"> Salvar</button>
+    <button ng-disabled="formularioCompra.$invalid" type="submit" id="btnsalvar" name="btnsalvar" class="btn btn-primary"> Salvar</button>
     <button id="btncancelar" name="btncancelar" type="reset" class="btn btn-danger">Cancelar</button>
     <a href="/#!/listaCompras" name="btnvoltar" class="btn btn-success">Voltar</a>
-
   </div>
 </div>
 
