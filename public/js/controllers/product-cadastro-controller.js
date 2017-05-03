@@ -21,6 +21,8 @@ angular.module('sun').controller('CadastroProdutosController', function($scope,$
     }
 
     $scope.submeterProduto = function() {
+         if($scope.formProdutos.$valid){
+
         if($routeParams.produtoId){
            $http.put('/v1/produtos/' + $scope.produto._id, $scope.produto).then(function(){
                console.log('Produto editado com sucesso!');
@@ -41,5 +43,5 @@ angular.module('sun').controller('CadastroProdutosController', function($scope,$
                 });
          }
     }
-
+    }
 });
