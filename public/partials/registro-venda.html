@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-lg-2">
+    <div class="input-group">
+      <input ng-model="produto" type="text" class="form-control" placeholder="Produto">
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="input-group">
+      <input ng-model="preco" type="text" class="form-control" placeholder="Preço">
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="input-group">
+      <input ng-model="quantidade" type="text" class="form-control" placeholder="Quantidade">
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="input-group">
+      <input disabled type="text" class="form-control" placeholder="Total" value="{{preco * quantidade}}">
+    </div>
+  </div>
+  <div class="col-md-2">
+    <a ng-click="mostraProduto()" type="button" class="btn btn-primary">Adicionar Produto</a>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+        </tr>
+     </thead>
+
+    <tbody>
+        <tr ng-repeat="produto in produtos">
+            <td>{{produto.produto}}</td>
+            <td>{{produto.preco}}</td>
+            <td>{{produto.quantidade}}</td>
+            <td>{{produto.preco * produto.quantidade}}</td>
+         </tr>
+        <tr>
+            <td></td>
+            <td>Total R$:{{getTotal()}}</td>
+            <td></td> 
+        </tr>
+    </tbody>
+</table>
+<a href="" type="button" class="btn btn-primary">Finalizar Compra</a>
+<a ng-click"" class="btn btn-danger">Cancelar Compra</a>
+</div>
+

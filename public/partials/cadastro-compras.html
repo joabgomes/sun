@@ -57,7 +57,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="valor_total">Valor Total R$ : </label>  
   <div class="col-md-6">
-    <input disabled id="valor_total" class="form-control input-md" value="{{((compras.quantidade * 1) * (compras.valor_unitario * 1))}}" >
+    <input disabled id="valor_total" ng-model="compras.valor_total" class="form-control input-md" value="{{((compras.quantidade * 1) * (compras.valor_unitario * 1))}}">
   </div>
 </div>
 

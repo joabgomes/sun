@@ -1,10 +1,11 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
              
 /*mongoose.model('Usuario', 
                     mongoose.Schema({nome: String, id: String, senha: String, nivel: String}),
               'Usuario' );*/
               
-var schema = mongoose.Schema({
+var funcionarioSchema = new Schema({
 
       nome:{
             type:String,
@@ -24,7 +25,7 @@ var schema = mongoose.Schema({
       }
 });
 
-mongoose.model('Usuario', schema)
+mongoose.model('Usuario', funcionarioSchema);
 
 
                //seleciona os dados e a collection

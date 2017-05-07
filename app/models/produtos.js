@@ -1,41 +1,17 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var schema = mongoose.Schema({
 
-    cd_barras: {
-        type: Number,
-        require: true
-    },
+var produtoSchema = new Schema({
 
-    nm_item: {
-        type: String,
-        require: true
-    },
-
-    tipo_item: {
-        type: String,
-        require: true
-    },
-
-    unidade: {
-        type: String,
-        require: true
-    },
-
-    marca: {
-        type: String,
-        require: true
-    },
-
-    modelo: {
-        type: String,
-        require: true
-    },
-
-    status: {
-        type: String,
-        require: true
-    }
+    cd_barras: {type: Number,require: true},
+    nm_item: {type: String,require: true},
+    tipo_item: {type: String,require: true},
+    unidade: {type: String,require: true},
+    marca: {type: String,require: true},
+    modelo: {type: String,require: true},
+    status: {type: String,require: true},
 
 });
-mongoose.model('Produto',schema);
+
+var produto = mongoose.model('Produto',produtoSchema);

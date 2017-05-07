@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var api = {};
 
 var modelCompra = mongoose.model('Compra');
+var modelProduto = mongoose.model('Produto');
 
 api.lista = function(request,response){
    
@@ -18,17 +19,13 @@ api.lista = function(request,response){
 api.adiciona = function(request,response){
     var compra = request.body;
  
-        modelCompra
-        .create(compra)
-        .then(function(compraR){
-            response.json(compraR);
-        },function(error){
-            console.log(error);
-            response.status(500).json(error);
-        });
-      
-   
-      
+    modelCompra.create(compra).then(function(compraR){
+        response.json(compraR);
+    },function(error){
+        console.log(error);
+        response.status(500).json(error);
+    })
+
 };
 
 api.buscaPorId = function(request,response){

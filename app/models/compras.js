@@ -1,56 +1,32 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 
-var schema = mongoose.Schema({
+var compraSchema = new Schema({
 
-    nota_fiscal: {
-        type: Number,
-        require: true
-    },
+    nota_fiscal: {type: Number,require: true},
+    codigo:{type: String,require: true},
+    produto:[{type: Schema.Types.ObjectId,ref:'Produto'}],
+    quantidade: {type: Number,require: true},
+    valor_unitario: {type: Number,require: true},
+    valor_total: {type: Number,require: true},
+    data_fabricacao: {type: String,require: true},
+    validade: {type: String,require: true},
+    codigo_ean: {type: Number,require: true}
 
-    codigo: {
-        type: String,
-        require: true
-    },
-
-    produto: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Produto'
-        
-    },
-    quantidade: {
-        type: Number,
-        require: true
-    },
-
-    
-
-
-    valor_unitario: {
-        type: Number,
-        require: true
-    },
-
-     valor_total: {
-        type: Number,
-        require: true
-    },
-
-    data_fabricacao: {
-        type: String,
-        require: true
-    },
-
-    validade: {
-        type: String,
-        require: true
-    },
-
-    codigo_ean: {
-        type: Number,
-        require: true
-    }
-
-    
 });
-mongoose.model('Compra',schema);
+
+var compra = mongoose.model('Compra',compraSchema);
+
+
+/*compra.find({}).populate('produto').exec(function(err, items,compra) {
+    console.log(items[0].compra[0].produto.nm_item); 
+});*/
+  
+   
+
+
+
+
+
+

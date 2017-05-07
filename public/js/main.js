@@ -56,6 +56,12 @@ angular.module('sun',['ngRoute'])
         
     });
 
+     $routeProvider.when('/vendas',{
+        templateUrl:'partials/registro-venda.html',
+        controller: 'VendaProdutoController'
+       
+    });
+
 
 
 
