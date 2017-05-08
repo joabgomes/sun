@@ -33,7 +33,7 @@ api.adiciona = function(request,response){
                 response.status(500).json(error);
             });
        }
-   })
+   });
       
 };
 

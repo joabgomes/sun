@@ -11,6 +11,8 @@ var produtoSchema = new Schema({
     marca: {type: String,require: true},
     modelo: {type: String,require: true},
     status: {type: String,require: true},
+    preco: {type: Number, require: true},
+    quantidade: {type: Number, default: 0}
 
 });
 

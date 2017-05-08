@@ -14,6 +14,7 @@ app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
+
 consign ({cwd: 'app'})
     .include('models')   //Não precisa mais dar require em todos arquivos dentro da 'api' e da 'routes'
     .then('api/autentica.js')

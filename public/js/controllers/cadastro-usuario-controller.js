@@ -8,8 +8,7 @@ angular.module('sun').controller('CadastroUsuarioController', function($scope, $
             
             if($scope.formulario.$valid){
 
-           var promisse = $http.post('/v1/usuarios', $scope.usuario)
-           
+                var promisse = $http.post('/v1/usuarios', $scope.usuario);
                 promisse.then(function(retorno){
                     
                     $scope.usuario = retorno.data;

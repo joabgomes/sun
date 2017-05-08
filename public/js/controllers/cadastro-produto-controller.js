@@ -42,6 +42,6 @@ angular.module('sun').controller('CadastroProdutosController', function($scope,$
                     console.log(error);
                 });
          }
-    }
+       }
     }
 });

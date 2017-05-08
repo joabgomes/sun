@@ -17,6 +17,7 @@
             <th>Nome do Produto</th>
             <th>Tipo do Item</th>
             <th>Unidade</th>
+            <th>Preço</th>
             <th>Ação</th>
         </tr>
      </thead>
@@ -27,6 +28,7 @@
             <td>{{produto.nm_item}}</td>
             <td>{{produto.tipo_item}}</td>
             <td>{{produto.unidade}}</td>
+            <td>{{produto.preco}}</td>
             <td>
               <a title="Excluir"class="btn glyphicon glyphicon-trash" ng-click="removerProduto(produto)" ></a>
               <a title="Editar"class="btn glyphicon glyphicon-pencil" href="#!/produtos/edit/{{produto._id}}"></a>

@@ -11,25 +11,25 @@ angular.module('sun',['ngRoute'])
     });
 
     $routeProvider.when('/usuarios/new',{
-        templateUrl: 'partials/user-cadastro.html',
+        templateUrl: 'partials/cadastro-usuario.html',
         controller: 'CadastroUsuarioController'
 
     });
 
     $routeProvider.when('/produtos',{
-        templateUrl: 'partials/product-tabela.html',
+        templateUrl: 'partials/tabela-produto.html',
         controller: 'TabelaProdutosController'
 
     });
 
     $routeProvider.when('/produtos/new',{
-        templateUrl: 'partials/product-cadastro.html',
+        templateUrl: 'partials/cadastro-produto.html',
         controller: 'CadastroProdutosController'
 
     });
 
     $routeProvider.when('/produtos/edit/:produtoId',{
-        templateUrl:'partials/product-cadastro.html',
+        templateUrl:'partials/cadastro-produto.html',
         controller: 'CadastroProdutosController'
     });
 

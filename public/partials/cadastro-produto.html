@@ -47,6 +47,16 @@
       </div>
     </div>
 
+
+    <div class="col-lg-12 form-group">
+      <label class="col-lg-2" for="Preco">Preço</label>
+      <div class="col-lg-4">
+        <input ng-model="produto.preco" type="text" id="preco" name="preco" placeholder="R$" class="form-control sku" required>
+        <p ng-show="formProdutos.$submitted && formProdutos.preco.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
+      </div>
+    </div>
+
+    
     <div class="col-lg-12 form-group">
       <label class="col-lg-2" for="marca">Marca</label>
       <div class="col-lg-4">

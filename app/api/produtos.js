@@ -17,7 +17,7 @@ api.lista = function(request,response){
 
 api.adiciona = function(request,response){
     var produto = request.body;
-
+   
     modelProduto
         .create(produto)
         .then(function(produtoR){
