@@ -7,23 +7,23 @@
  <fieldset>
 
     <div class="col-lg-12 form-group margin50">
-      <label class="col-lg-2"  for="cd_barras">Código de Barras</label>
+      <label class="col-lg-3"  for="cd_barras">Código de Barras</label>
       <div class="col-lg-4">
         <input type="text" ng-model="produto.cd_barras" id="cd_barras" name="cd_barras" placeholder="Código de Barras" class="form-control name" required>
         <p ng-show="formProdutos.$submitted && formProdutos.cd_barras.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
       </div>
     </div>
 
-      <div class="col-lg-12 form-group margin50">
-      <label class="col-lg-2"  for="nm_item">Nome do Produto</label>
-      <div class="col-lg-4">
-        <input type="text" ng-model="produto.nm_item" id="nm_item" name="nm_item" placeholder="Nome do item" class="form-control name" required>
-        <p ng-show="formProdutos.$submitted && formProdutos.nm_item.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
+    <div class="col-lg-12 form-group margin50">
+        <label class="col-lg-3"  for="nm_item">Nome do Produto</label>
+         <div class="col-lg-4">
+            <input type="text" ng-model="produto.nm_item" id="nm_item" name="nm_item" placeholder="Nome do item" class="form-control name" required>
+            <p ng-show="formProdutos.$submitted && formProdutos.nm_item.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
       </div>
     </div>
 
     <div class=" col-lg-12 form-group">
-      <label class="col-lg-2" for="tipo_item" >Tipo do Item</label>
+      <label class="col-lg-3" for="tipo_item" >Tipo do Item</label>
       <div class="col-lg-4">
          <select  name="tipo_item" required
                     ng-model="produto.tipo_item" class="form-control" 
@@ -36,7 +36,7 @@
     </div>
 
      <div class="col-lg-12 form-group">
-      <label class="col-lg-2" for="unidade">Unidade</label>
+      <label class="col-lg-3" for="unidade">Unidade</label>
       <div class="col-lg-4">
         <select ng-model="produto.unidade"  class="form-control" name="unidade" required
                 ng-controller="UnidadesController"
@@ -49,7 +49,7 @@
 
 
     <div class="col-lg-12 form-group">
-      <label class="col-lg-2" for="Preco">Preço</label>
+      <label class="col-lg-3" for="Preco">Preço</label>
       <div class="col-lg-4">
         <input ng-model="produto.preco" type="text" id="preco" name="preco" placeholder="R$" class="form-control sku" required>
         <p ng-show="formProdutos.$submitted && formProdutos.preco.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
@@ -58,7 +58,7 @@
 
     
     <div class="col-lg-12 form-group">
-      <label class="col-lg-2" for="marca">Marca</label>
+      <label class="col-lg-3" for="marca">Marca</label>
       <div class="col-lg-4">
         <select ng-model="produto.marca" class="form-control" name="marca" required
                  ng-controller="MarcasController"
@@ -71,7 +71,7 @@
 
 
     <div class="col-lg-12 form-group">
-      <label class="col-lg-2" for="modelo">Modelo</label>
+      <label class="col-lg-3" for="modelo">Modelo</label>
       <div class="col-lg-4">
         <input ng-model="produto.modelo" type="text" id="modelo" name="modelo" placeholder="Modelo" class="form-control sku" required>
         <p ng-show="formProdutos.$submitted && formProdutos.modelo.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
@@ -79,7 +79,7 @@
     </div>
 
  <div class="col-lg-12 form-group">
-      <label class="col-lg-2" for="status">Status do Produto</label>
+      <label class="col-lg-3" for="status">Status do Produto</label>
       <div class="col-lg-4">
         
         <select ng-model="produto.status"  class="form-control" name="status"required
@@ -96,7 +96,8 @@
            <div class="page-header">
            </div>
            <div class="controls">
-             <button ng-disabled="formProdutos.$invalid" type="submit" class="btn btn-success">Registrar Produto</button>
+             <button ng-disabled="formProdutos.$invalid" type="submit" class="btn btn-success">Registrar</button>
+             <button id="btncancelar" name="btncancelar" type="reset" class="btn btn-success">Limpar</button>
              <a href="/#!/produtos" class="btn btn-success">Voltar</a>
            </div>
         </div>

@@ -1,9 +1,21 @@
-angular.module('sun').controller('VendaProdutoController',function($scope,$http){
+angular.module('sun').controller('VendaProdutoController',function($scope,$http,$routeParams){
 
     
     $scope.produtos = [];
     $scope.venda = {};
     var vendas = $scope.venda;
+    $scope.produtosDb = {};
+
+     
+    $http.get('/v1/produtos/').then(function(retorno){
+
+        $scope.produtosDb = retorno.data;
+
+    }).catch(function(error){
+        console.log(error);
+    });
+
+
  
     $scope.mostraProduto = function() {
         

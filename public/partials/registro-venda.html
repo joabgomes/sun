@@ -1,9 +1,13 @@
 <div class="row">
   <div class="col-lg-2">
     <div class="input-group">
-      <input ng-model="venda.produto" type="text" class="form-control" placeholder="Produto">
+      <select  name="tipo_item" required
+                ng-model="venda.produto" class="form-control" 
+                ng-options="produto._id as (produto.nm_item | uppercase) for produto in produtosDb">
+            <option value="">Produtos</option>
+        </select>
     </div>
-  </div>
+   </div>
   <div class="col-lg-2">
     <div class="input-group">
       <input ng-model="venda.preco" type="text" class="form-control" placeholder="Preço">
