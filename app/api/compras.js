@@ -16,18 +16,26 @@ api.lista = function(request,response){
         });
 };
 
-api.adiciona = function(request,response){
-    var compra = request.body;
- 
-    modelCompra.create(compra).then(function(compraR){
-        response.json(compraR);
-    },function(error){
-        console.log(error);
-        response.status(500).json(error);
+api.adiciona = function(req,res){
+    
+    var compra = new modelCompra({
+
+        nota_fiscal: req.body.nota_fiscal,
+        codigo: req.body.codigo,
+        produto:req.body.produto,
+        quantidade:req.body.quantidade,
+        valor_unitario:req.body.valor_unitario,
+        valor_total: req.body.valor_unitario * req.body.quantidade,
+        data_fabricacao: req.body.data_fabricacao,
+        validade: req.body.validade,
+        codigo_ean: req.body.codigo_ean
     })
-
-};
-
+    compra.save(function(error,document){
+        if(!error) {
+            res.json(document);
+        }
+    });
+}
 api.buscaPorId = function(request,response){
 
 };

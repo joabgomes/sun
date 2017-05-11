@@ -10,7 +10,7 @@
 <div class="col-lg-12 form-group margin50">
   <label class="col-lg-3" for="nota_fical">Nota Fiscal</label>  
   <div class="col-lg-4">
-    <input id="nota_fical" ng-model="compras.nota_fiscal" id="nota_fical" name="nota_fical" type="text" placeholder="Numero da Nota Fiscal" class="form-control name" required>
+    <input id="nota_fical" ng-model="compras.nota_fiscal" id="nota_fical" name="nota_fiscal" type="text" placeholder="Numero da Nota Fiscal" class="form-control name " required>
     <p ng-show="formularioCompra.$submitted && formularioCompra.nota_fiscal.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
   </div>
 </div>
@@ -59,7 +59,7 @@
 <div class="col-lg-12 form-group margin50">
   <label class="col-lg-3" for="valor_total">Total R$ </label>  
   <div class="col-lg-4">
-    <input disabled id="valor_total" ng-model="compras.valor_total" class="form-control input-md" value="{{((compras.quantidade * 1) * (compras.valor_unitario * 1))}}">
+    <label class="form-control input-md" >{{compras.quantidade * compras.valor_unitario}}</label>
   </div>
 </div>
 
@@ -81,22 +81,13 @@
   </div>
 </div>
 
-<!-- CODIGO EAN-->
-<div class="col-lg-12 form-group margin50">
-  <label class="col-lg-3 " for="codigo_ean">Código EAN</label>  
-  <div class="col-lg-4">
-    <input id="codigo_ean" ng-model="compras.codigo_ean" id="codigo_ean" name="codigo_ean" type="text" placeholder="Codigo EAN" class="form-control name" required >
-    <p ng-show="formularioCompra.$submitted && formularioCompra.codigo_ean.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
-  </div>
-</div>
-
 <!-- Button (Double) -->
 
 <div class="col-lg-12 ">
   <div class="control-group">
       <div class="page-header">
       </div>
-    <button ng-disabled="formularioCompra.$invalid" type="submit" id="btnsalvar" name="btnsalvar" class="btn btn-success">Registrar</button>
+    <button type="submit" id="btnsalvar" name="btnsalvar" class="btn btn-success">Registrar</button>
     <button id="btncancelar" name="btncancelar" type="reset" class="btn btn-success">Limpar</button>
     <a href="/#!/listaCompras" name="btnvoltar" class="btn btn-success">Voltar</a>
   </div>

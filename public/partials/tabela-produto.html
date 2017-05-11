@@ -1,15 +1,18 @@
 <div class="page-header">
-    <h2> Lista de Produtos</h2>
+    <h2>Produtos Cadastrados</h2>
 </div>  <!--Fim do page-header-->
 
 <p class="alert alert-info" ng-show="mensagem.length">
 	{{mensagem}}
 </p>
 
+
 <div>
-    <input class="form-control" placeholder="Buscar" ng-model="filtro" ng-model-options="{ debounce: 200 }">
+    <input class="col-lg-4" placeholder="Buscar" ng-model="filtro" ng-model-options="{ debounce: 200 }">
 </div>
-<table class="table">
+<br>
+<br>
+<table class="table table-bordered">    
 
     <thead>
         <tr>
@@ -18,7 +21,7 @@
             <th>Tipo</th>
             <th>Unidade</th>
             <th>Preço</th>
-            <th>Ação</th>
+            <th class="text-center">Ação</th>
         </tr>
      </thead>
 
@@ -29,8 +32,8 @@
             <td>{{produto.tipo_item}}</td>
             <td>{{produto.unidade}}</td>
             <td>{{produto.preco}}</td>
-            <td>
-              <a title="Excluir"class="btn glyphicon glyphicon-trash" ng-click="removerProduto(produto)" ></a>
+            <td class="text-center">
+              <a title="Excluir"class="btn glyphicon glyphicon-trash" href="" ng-click="removerProduto(produto)" ></a>
               <a title="Editar"class="btn glyphicon glyphicon-pencil" href="#!/produtos/edit/{{produto._id}}"></a>
             </td>
          </tr>
@@ -38,4 +41,4 @@
     </tbody>
 </table>
 <a href="/#!/produtos/new" type="button" class="btn btn-primary">Novo Produto</a>
-<a ng-click"removerTodos(produtos)" class="btn btn-danger">Não Aperte</a>
+<!--<a ng-click"removerTodos(produtos)" class="btn btn-danger">Não Aperte</a>-->

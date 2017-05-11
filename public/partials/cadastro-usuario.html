@@ -7,7 +7,7 @@
  <fieldset>
 
     <div class="col-lg-12 form-group margin50">
-      <label class="col-lg-2"  for="nome">Nome</label>
+      <label class="col-lg-3"  for="nome">Nome</label>
       <div class="col-lg-4">
         <input type="text" ng-model="usuario.nome" id="nome" name="nome" placeholder="Nome do Funcionário" class="form-control name" required>
         <p ng-show="formulario.$submitted && formulario.nome.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
@@ -15,7 +15,7 @@
     </div>
 
       <div class="col-lg-12 form-group margin50">
-      <label class="col-lg-2"  for="nm_usuario">Nome de Usuário</label>
+      <label class="col-lg-3"  for="nm_usuario">Nome de Usuário</label>
       <div class="col-lg-4">
         <input type="text" ng-model="usuario.id" id="nm_usuario" name="nm_usuario" placeholder="ID" class="form-control name" required ng-maxlength="20" required>
         <p ng-show="formulario.$submitted && formulario.nm_usuario.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
@@ -24,7 +24,7 @@
     </div>
 
     <div class="col-lg-12 form-group margin50">
-      <label class="col-lg-2"  for="senha">Senha</label>
+      <label class="col-lg-3"  for="senha">Senha</label>
       <div class="col-lg-4">
         <input type="password" ng-model="usuario.senha" id="senha" name="senha" placeholder="senha" required ng-minlength="3" ng-maxlength="15" class="form-control name">
         <p ng-show="formulario.$submitted && formulario.senha.$error.required" class="text-danger">*Este campo não pode ser nulo</p>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="col-lg-12 form-group margin50">
-      <label class="col-lg-2">Nível de Acesso</label>
+      <label class="col-lg-3">Nível de Acesso</label>
       <div class="col-lg-4">
         <div class="radio">
             <label><input  type="radio" ng-model="usuario.nivel" name="rb-usuario" ng-required="!nivel" value="User">Usuário</label>
@@ -49,8 +49,9 @@
            <div class="page-header">
            </div>
            <div class="controls">
-             <button type="submit" class="btn btn-success">Registrar Produto</button>
-             <a href="/#!/produtos" class="btn btn-success">Voltar</a>
+             <button type="submit" class="btn btn-success">Registrar</button>
+             <button type="reset" class="btn btn-success">Limpar</button>
+             <a href="/#!/usuarios" class="btn btn-success">Voltar</a>
            </div>
         </div>
     </div>

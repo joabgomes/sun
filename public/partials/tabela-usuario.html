@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h2> Lista de Usuários</h2>
+    <h2>Usuários</h2>
 </div>  <!--Fim do page-header-->
 
 <p class="alert alert-info" ng-show="mensagem.length">
@@ -7,9 +7,11 @@
 </p>
 
 <div>
-    <input class="form-control" placeholder="Buscar" ng-model="filtro" ng-model-options="{ debounce: 200 }">
+    <input class="col-lg-4" placeholder="Buscar" ng-model="filtro" ng-model-options="{ debounce: 200 }">
 </div>
-<table class="table">
+<br>
+<br>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Nome</th>

@@ -20,10 +20,8 @@ api.adiciona = function(req,res){
         if(!error) {
 
             res.json(document);
-        }
-          
-        
-        
+        } 
+
     });
 };
 

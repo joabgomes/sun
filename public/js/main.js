@@ -6,7 +6,7 @@ angular.module('sun',['ngRoute'])
     $httpProvider.interceptors.push('tokenInterceptor');
 
     $routeProvider.when('/usuarios',{
-        templateUrl: 'partials/user-tabela.html',
+        templateUrl: 'partials/tabela-usuario.html',
         controller: 'TabelaUsuarioController'
     });
 
