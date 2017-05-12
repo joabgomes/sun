@@ -28,6 +28,11 @@ angular.module('sun',['ngRoute'])
 
     });
 
+    $routeProvider.when('/estoque',{
+        templateUrl: 'partials/estoque.html',
+        controller: 'EstoqueController'
+    });
+
     $routeProvider.when('/produtos/edit/:produtoId',{
         templateUrl:'partials/cadastro-produto.html',
         controller: 'CadastroProdutosController'

@@ -5,11 +5,11 @@ var model = mongoose.model('Usuario');
 
 api.lista = function(request,response){
    
-    model
-        .find({})
-        .then(function(usuarios){
+    model.find({}).select({"nome":1,"id":1,"nivel":1}).then(function(usuarios){
+    
             response.json(usuarios);
-        },function(error){
+       
+     },function(error){
             console.log(error);
             response.status(500).json(error);
         });

@@ -1,6 +1,7 @@
 angular.module('sun').controller('TabelaProdutosController',function($scope,$http){
 
   $scope.produtos = [];
+  $scope.mensagem = '';
 
   var promisse = $http.get('/v1/produtos');
     promisse.then(function(retorno){

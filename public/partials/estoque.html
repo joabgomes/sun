@@ -1,0 +1,36 @@
+<div class="page-header">
+    <h2>Estoque</h2>
+</div> <!-- Fim do page-header-->
+
+<p class="alert alert-info" ng-show="mensagem.lenght">
+    {{mensagem}}
+</p>
+
+<div>
+    <input class="col-lg-4" placeholder="Buscar " ng-model="filtro" ng-model-options="{ debounce: 200}">
+</div>
+
+<br>
+<br>
+
+ <table class="table table-bordered">
+    <thead>
+       <tr>
+            <th>Produtos</th>
+            <th>Quantidade</th>
+            <th class="text-center">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="produto in estoque">
+            
+            <td>{{produto.nm_item}}</td>
+            <td>{{produto.quantidade}}</td>
+            <td>
+               <a href="" title="Excluir"class="btn glyphicon glyphicon-trash" ng-click="removerProduto(produto)"></a>
+            </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
