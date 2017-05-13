@@ -5,6 +5,8 @@ module.exports = function(app){
     app.get('/v1/estoque',api.mostrar);
    
     app.route('/v1/estoque/:id')
-        .delete(api.deletar);
+        .delete(api.deletar)
+        .put(api.atualizar)
+        .get(api.buscaPorId)
 
 };

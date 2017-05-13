@@ -1,0 +1,29 @@
+<div class="page-header">
+    <h2>Estoque</h2>
+</div> <!-- Fim do page-header-->
+
+<p class="alert alert-info" ng-show="mensagem.lenght">
+    {{mensagem}}
+</p>
+
+ <table class="table table-bordered">
+    <thead>
+       <tr>
+            <th>Produtos</th>
+            <th>Quantidade</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+            
+        <td><input type="text" ng-model="produtos.nm_item" id="nm_item" name="nm_item" placeholder="Nome do item" 
+        class="form-control name" required></td>
+        <td><input type="text" ng-model="produtos.quantidade" id="quantidade" name="quantidade" placeholder="Quantidade" 
+        class="form-control name" required></td>
+      
+      </tr>
+    </tbody>
+  </table>
+  <button ng-click="editar()" type="submit" class="btn btn-success">Editar</button>
+</div>

@@ -33,6 +33,11 @@ angular.module('sun',['ngRoute'])
         controller: 'EstoqueController'
     });
 
+    $routeProvider.when('/estoque/edit/:id',{
+        templateUrl: 'partials/estoque-edit.html',
+        controller: 'EstoqueController'
+    });
+
     $routeProvider.when('/produtos/edit/:produtoId',{
         templateUrl:'partials/cadastro-produto.html',
         controller: 'CadastroProdutosController'

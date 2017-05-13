@@ -22,11 +22,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="produto in estoque">
+      <tr ng-repeat="produto in estoque | filter:filtro">
             
             <td>{{produto.nm_item}}</td>
             <td>{{produto.quantidade}}</td>
             <td>
+               <a title="Editar"class="btn glyphicon glyphicon-pencil" href="#!/estoque/edit/{{produto._id}}"></a>
                <a href="" title="Excluir"class="btn glyphicon glyphicon-trash" ng-click="removerProduto(produto)"></a>
             </td>
       </tr>

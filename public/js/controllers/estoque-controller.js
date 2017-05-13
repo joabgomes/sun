@@ -1,7 +1,8 @@
-angular.module('sun').controller('EstoqueController',function($scope,$http){
+angular.module('sun').controller('EstoqueController',function($location,$scope,$http,$routeParams){
 
     $scope.estoque = [];
     $scope.mensagem = '';
+    $scope.produtos = {};
 
     $http.get('/v1/estoque').then(function(produtos){
 
@@ -10,6 +11,29 @@ angular.module('sun').controller('EstoqueController',function($scope,$http){
      }).catch(function(err){
         console.log(err);
     });
+
+    if($routeParams.id){
+
+        $http.get('/v1/estoque/' + $routeParams.id).then(function(produtos){
+
+            $scope.produtos = produtos.data;
+        
+        }).catch(function(error){
+            console.log(error);
+        });
+    }
+
+    $scope.editar = function(){
+
+        if($routeParams.id){
+            $http.put('/v1/produtos/' + $scope.produtos._id, $scope.produtos).then(function(){
+                console.log('Produto editado com sucesso!');
+                $location.path('/estoque')
+            }).catch(function(error){
+                console.log(error);
+            });
+        }
+    }
 
     $scope.removerProduto = function(produto){
 

@@ -12,7 +12,7 @@ api.lista = function(request,response){
         },function(error){
             console.log(error);
             response.status(500).json(error);
-        })
+        });
 };
 
 api.adiciona = function(request,response){
@@ -25,7 +25,7 @@ api.adiciona = function(request,response){
         },function(error){
             console.log(error);
             response.status(500).json(error);
-        })
+        });
 };
 
 api.buscarPorId = function(request,response){
@@ -38,7 +38,7 @@ api.buscarPorId = function(request,response){
             },function(error){
               console.log(error);
               response.status(404).json(error);
-            })
+            });
 };
 
 
@@ -51,7 +51,7 @@ api.delete = function(request,response){
             },function(error){
                 console.log(error);
                 response.status(500).json(error);
-            })
+            });
 
 };
 
@@ -66,7 +66,7 @@ api.atualiza = function(request,response){
           },function(error){
               console.log(error);
               response.status(500).json(error);
-          })
+          });
 
 };
 
