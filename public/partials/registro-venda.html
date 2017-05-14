@@ -3,24 +3,24 @@
     <div class="input-group">
       <select  name="tipo_item" required
                 ng-model="venda.produto" class="form-control" 
-                ng-options="produto._id as (produto.nm_item | uppercase) for produto in produtosDb">
+                ng-options="produto._id as (produto.nm_item | uppercase) for produto in produtosDb" style="width: auto;">
             <option value="">Produtos</option>
         </select>
     </div>
    </div>
   <div class="col-lg-2">
     <div class="input-group">
-      <input ng-model="venda.preco" type="text" class="form-control" placeholder="Preço">
+      <input ng-model="venda.preco" type="number" class="form-control" placeholder="Preço">
     </div>
   </div>
   <div class="col-lg-2">
     <div class="input-group">
-      <input ng-model="venda.quantidade" type="text" class="form-control" placeholder="Quantidade">
+      <input ng-model="venda.quantidade" type="number" class="form-control" placeholder="Quantidade">
     </div>
   </div>
   <div class="col-lg-2">
     <div class="input-group">
-      <input disabled type="text" class="form-control" placeholder="Valor" ng-value="(venda.preco * venda.quantidade)">
+      <input disabled type="number" class="form-control" placeholder="Valor" ng-value="(venda.preco * venda.quantidade)">
     </div>
   </div>
   <div class="col-md-2">
@@ -61,4 +61,5 @@
 <a href=""ng-click="salvaProduto()" type="button" class="btn btn-primary">Finalizar Compra</a>
 <a href=""ng-click="removeCampos()" class="btn btn-danger">Cancelar Compra</a>
 </div>
+
 

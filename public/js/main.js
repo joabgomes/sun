@@ -75,7 +75,7 @@ angular.module('sun',['ngRoute'])
 
 
 
-    $routeProvider.otherwise({redirectTo: '/home'});
+    $routeProvider.otherwise({redirectTo: '/vendas'});
 
 
 });
