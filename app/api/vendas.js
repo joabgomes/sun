@@ -10,8 +10,7 @@ api.adiciona = function(req,res){
     var venda = new modelVenda({
         
         vendas: produtos
-        
-               
+                          
     });
 
     console.log(venda);

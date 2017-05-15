@@ -1,16 +1,20 @@
 <div class="row">
   <div class="col-lg-2">
     <div class="input-group">
-      <select  name="tipo_item" required
-                ng-model="venda.produto" class="form-control" 
-                ng-options="produto._id as (produto.nm_item | uppercase) for produto in produtosDb" style="width: auto;">
-            <option value="">Produtos</option>
-        </select>
+      <input ng-model="codigo.cd_barras" type="number" class="form-control" placeholder="Código">          
     </div>
-   </div>
+    <button class="btn btn-default" ng-click="buscarProduto()" type="submit">
+            <i class="fa fa-search"></i>
+        </button>
+  </div>
   <div class="col-lg-2">
     <div class="input-group">
-      <input ng-model="venda.preco" type="number" class="form-control" placeholder="Preço">
+      <input disabled ng-model="venda.nm_item" type="text" class="form-control" placeholder="Produto">
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="input-group">
+      <input disabled ng-model="venda.preco" type="number" class="form-control" placeholder="Preço">
     </div>
   </div>
   <div class="col-lg-2">

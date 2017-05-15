@@ -6,22 +6,39 @@ angular.module('sun').controller('VendaProdutoController',function($scope,$http,
     var vendas = $scope.venda;
     $scope.produtosDb = {};
 
-     
-    $http.get('/v1/vendas').then(function(retorno){ //Usa essa rota pra pegar ou pesquisar o produto
+    $scope.buscarProduto = function() {
 
-        $scope.produtosDb = retorno.data;
+        
+        $http.get('/v1/vendas').then(function(retorno){ //Usa essa rota pra pegar ou pesquisar o produto
 
-    }).catch(function(error){
-        console.log(error);
-    });
+            $scope.produtosDb = retorno.data;
 
+            for(var i=0; i < $scope.produtosDb.length; i++){
 
- 
+                var produtosDb = $scope.produtosDb[i];
+            
+            
+                if(produtosDb.cd_barras == $scope.codigo.cd_barras){
+
+                    vendas.preco = produtosDb.preco;
+                    vendas.nm_item = produtosDb.nm_item;
+                    
+                }
+        
+        }
+
+        }).catch(function(error){
+            console.log(error);
+        });
+
+        
+}
+    
     $scope.mostraProduto = function() {
         
         $scope.produtos.push({
            
-            produto:vendas.produto,
+            produto:vendas.nm_item,
             preco:vendas.preco,
             quantidade:vendas.quantidade,
             valor:(vendas.preco * vendas.quantidade)
