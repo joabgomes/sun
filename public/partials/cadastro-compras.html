@@ -28,8 +28,8 @@
 <div class="col-lg-12 form-group margin50">
       <label class="col-lg-3" for="unidade">Produto</label>
       <div class="col-lg-4">
-        <select ng-model="compras.produto" class="form-control name"
-                ng-options="produto._id as (produto.nm_item | uppercase) for produto in produtos" required>
+        <select ng-model="compras.produto"  class="form-control name" required
+                ng-options="produto.nm_item as produto.nm_item for produto in produtos">
             <option value="">Selecione o Produto</option>
         </select>
         <p ng-show="formularioCompra.$submitted && formularioCompra.nm_item.$error.required" class="text-danger">*Este Campo Não Pode Ser Nulo!</p>
