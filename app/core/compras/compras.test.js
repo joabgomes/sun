@@ -17,7 +17,7 @@ describe('Módulo de Compras', () => {
     });
   });
 
-  describe('GET /compras', () => {
+  describe('GET /compras', function ()  {
     it('deve retornar todas as compras da base', (done) => {
       chai.request(server)
         .get('/v1/compras')

@@ -9,7 +9,7 @@ var compraSchema = new Schema({
   quantidade:       {type: Number, required: true},
   valor_unitario:   {type: Number, required: true},
   valor_total:      {type: Number, required: true},
-  data_fabricacao:  {type: String, required: true}, //por que nao usamos Date?
+  data_fabricacao:  {type: String, required: true}, //por que não sei!?
   validade:         {type: String, required: true} //por que nao usamos Date?
 });
 
