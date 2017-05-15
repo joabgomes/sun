@@ -27,7 +27,7 @@ api.atualizar = function(req,res){
   
 }
 
-api.buscaPorId = function(req,res){
+api.buscarPorId = function(req,res){
 
     modelProduto.findById(req.params.id).select({"nm_item":1,"quantidade":1}).then(function(produto){
 

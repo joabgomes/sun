@@ -7,7 +7,7 @@ angular.module('sun').controller('VendaProdutoController',function($scope,$http,
     $scope.produtosDb = {};
 
      
-    $http.get('/v1/produtos/').then(function(retorno){
+    $http.get('/v1/vendas').then(function(retorno){ //Usa essa rota pra pegar ou pesquisar o produto
 
         $scope.produtosDb = retorno.data;
 

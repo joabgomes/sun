@@ -7,6 +7,6 @@ module.exports = function(app){
     app.route('/v1/estoque/:id')
         .delete(api.deletar)
         .put(api.atualizar)
-        .get(api.buscaPorId)
+        .get(api.buscarPorId)
 
 };
