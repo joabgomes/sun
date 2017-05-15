@@ -4,18 +4,14 @@ var bodyParser = require('body-parser');
 var consign = require('consign');
 var path = require('path');
 
-module.exports = function(){
+module.exports = function () {
+  app.set('secret', 'ohomemmacaconaotemalmaenemcoracao');
 
+  app.use(express.static('./public'));
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
 
-
-app.set('secret','ohomemmacaconaotemalmaenemcoracao');
-
-app.use(express.static('./public'));
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
-
-
-consign ({cwd: 'app'})
+  consign({ cwd: 'app' })
     .include('models')   //Não precisa mais dar require em todos arquivos dentro da 'api' e da 'routes'
     .then('api/autentica.js')
     .then('api')
@@ -23,6 +19,8 @@ consign ({cwd: 'app'})
     .then('routes')
     .into(app);
 
-    return app;
+  //Registrando módulos
+  app.use(require('../app/core/compras/compras.routes'));
 
+  return app;
 }
