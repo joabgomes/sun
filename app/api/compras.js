@@ -36,6 +36,21 @@ api.adiciona = function(req,res){
         }
     });
 }
+
+
+api.atualizarEstoque = function(req, res){
+    
+        var conditions = {nm_item: req.body.produto},
+        update = {$inc : {quantidade: req.body.quantidade}},
+        options = {multi: true};
+
+    modelProduto.update(conditions, update, options, callback)
+    function callback (err, numAfetados){
+        console.log(err);
+    }
+}
+
+
 api.buscaPorId = function(req,res){
 
     modelCompra.findById(req.params.id).then(function(produto){

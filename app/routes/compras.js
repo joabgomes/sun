@@ -4,7 +4,8 @@ module.exports = function(app){
 
     app.route('/v1/compras')
         .get(api.lista)
-        .post(api.adiciona);
+        .post(api.adiciona)
+        .put(api.atualizarEstoque);
     
     app.route('/v1/compras/:id')
         .get(api.buscaPorId)

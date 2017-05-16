@@ -33,6 +33,13 @@ angular.module('sun').controller('CadastroCompraController', function($scope,$ht
         console.log(error);
     });
 
+      $scope.atualizarEstoque = function() {
+
+        if($scope.formularioCompra.$valid){
+            $http.put('/v1/compras',$scope.compras);
+    }
+ }
+
     $scope.submeterCompra = function(produto) {
 
         if($scope.formularioCompra.$valid){
