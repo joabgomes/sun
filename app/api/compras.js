@@ -36,8 +36,18 @@ api.adiciona = function(req,res){
         }
     });
 }
-api.buscaPorId = function(request,response){
+api.buscaPorId = function(req,res){
 
+    modelCompra.findById(req.params.id).then(function(produto){
+
+        if(!produto) throw Error('Produto não encontrado !');
+
+        res.json(produto);
+    
+    },function(error){
+        res.status(404).json(error);
+    });
+           
 };
 
 api.deletaPorId = function(request,response){
@@ -53,7 +63,17 @@ api.deletaPorId = function(request,response){
 
 };
 
-api.atualiza = function(request,response){
+api.atualiza = function(req,res){
+
+    modelProduto.findByIdAndUpdate(req.params.id, req.params.body).then(function(produto){
+        
+        if(!produto) throw Error ('Produto não encontrado!');
+        
+        res.json(produto);
+    
+    },function(error){
+        res.status(500).json(error);
+    });
 
 };
 

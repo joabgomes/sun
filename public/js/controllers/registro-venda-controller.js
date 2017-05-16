@@ -5,6 +5,7 @@ angular.module('sun').controller('VendaProdutoController',function($scope,$http,
     $scope.venda = {};
     var vendas = $scope.venda;
     $scope.produtosDb = {};
+    $scope.mensagem = '';
 
     $scope.buscarProduto = function() {
 
@@ -22,6 +23,7 @@ angular.module('sun').controller('VendaProdutoController',function($scope,$http,
 
                     vendas.preco = produtosDb.preco;
                     vendas.nm_item = produtosDb.nm_item;
+                
                     
                 }
         
@@ -32,7 +34,7 @@ angular.module('sun').controller('VendaProdutoController',function($scope,$http,
         });
 
         
-}
+    }
     
     $scope.mostraProduto = function() {
         
@@ -45,9 +47,10 @@ angular.module('sun').controller('VendaProdutoController',function($scope,$http,
             
         });
             
-        vendas.produto = "";
+        vendas.nm_item = "";
         vendas.preco = "";
         vendas.quantidade = "";
+        $scope.codigo.cd_barras = "";
 
     };
 

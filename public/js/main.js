@@ -66,6 +66,12 @@ angular.module('sun',['ngRoute'])
         
     });
 
+    $routeProvider.when('/cadastroCompras/edit/:id',{
+        templateUrl:'partials/cadastro-compras.html',
+        controller: 'CadastroCompraController'
+        
+    });
+
      $routeProvider.when('/vendas',{
         templateUrl:'partials/registro-venda.html',
         controller: 'VendaProdutoController'

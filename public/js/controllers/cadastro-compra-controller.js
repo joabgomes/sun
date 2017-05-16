@@ -1,19 +1,33 @@
-angular.module('sun').controller('CadastroCompraController', function($scope,$http,$location,){
+angular.module('sun').controller('CadastroCompraController', function($scope,$http,$location,$routeParams){
 
     $scope.compras = {};
     $scope.produtos = {};
-    $scope.parseFloat = parseFloat;
+    $scope.titulo = '';
+
+    if($routeParams.id){
+
+        $http.get('/v1/compras/' + $routeParams.id).then(function(retorno){
+            
+            $scope.compras = retorno.data;
+        
+        }).catch(function(error){
+            console.log(error);
+        });
+    }
+
+    if($routeParams.id){
+        
+        $scope.titulo = 'Editar Compra';
+        $scope.botao = 'Editar';
+    }else{
+        $scope.titulo = 'Cadastrar Compra';
+        $scope.botao = 'Cadastrar';
+    }
+
 
     $http.get('/v1/produtos').then(function(retorno){
        
          $scope.produtos = retorno.data;
-
-        for (var i = 0; i < $scope.produtos.length; i++) {
-            
-            var produtos = $scope.produtos[i];
-            produtos.selecionar = produtos.nm_item;
-            console.log(produtos.selecionar);
-        }
        
     }).catch(function(error){
         console.log(error);

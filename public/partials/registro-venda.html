@@ -1,36 +1,42 @@
 <div class="row">
-  <div class="col-lg-2">
-    <div class="input-group">
-      <input ng-model="codigo.cd_barras" type="number" class="form-control" placeholder="Código">          
+  
+<form class="form-horizontal"  novalidate name="formVenda">
+    <fieldset>
+      <div class="col-lg-2">
+        <div class="input-group">
+          
+          <a  href="" class="glyphicon glyphicon-search" ng-click="buscarProduto()" type="submit"></a>  
+          <input ng-model="codigo.cd_barras" type="number" class="form-control" placeholder="Código" required>
+                
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="input-group">
+          <input disabled ng-model="venda.nm_item" type="text" class="form-control" placeholder="Produto" required>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="input-group">
+          <input disabled ng-model="venda.preco" type="number" class="form-control" placeholder="Preço" required>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="input-group">
+          <input ng-model="venda.quantidade" type="number" class="form-control" placeholder="Quantidade" required>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="input-group">
+          <input disabled type="number" class="form-control" placeholder="Valor" ng-value="(venda.preco * venda.quantidade)">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <a href="" ng-disabled="formVenda.$invalid" ng-click="mostraProduto()" type="button" class="btn btn-primary">Adicionar Produto</a>
+      </div>
     </div>
-    <button class="btn btn-default" ng-click="buscarProduto()" type="submit">
-            <i class="fa fa-search"></i>
-        </button>
-  </div>
-  <div class="col-lg-2">
-    <div class="input-group">
-      <input disabled ng-model="venda.nm_item" type="text" class="form-control" placeholder="Produto">
-    </div>
-  </div>
-  <div class="col-lg-2">
-    <div class="input-group">
-      <input disabled ng-model="venda.preco" type="number" class="form-control" placeholder="Preço">
-    </div>
-  </div>
-  <div class="col-lg-2">
-    <div class="input-group">
-      <input ng-model="venda.quantidade" type="number" class="form-control" placeholder="Quantidade">
-    </div>
-  </div>
-  <div class="col-lg-2">
-    <div class="input-group">
-      <input disabled type="number" class="form-control" placeholder="Valor" ng-value="(venda.preco * venda.quantidade)">
-    </div>
-  </div>
-  <div class="col-md-2">
-    <a href="" ng-click="mostraProduto()" type="button" class="btn btn-primary">Adicionar Produto</a>
-  </div>
-</div>
+  </fieldset>
+</form>
+
 
 <br>
 <br>
@@ -62,8 +68,8 @@
         </tr>
     </tbody>
 </table>
-<a href=""ng-click="salvaProduto()" type="button" class="btn btn-primary">Finalizar Compra</a>
-<a href=""ng-click="removeCampos()" class="btn btn-danger">Cancelar Compra</a>
+<a href="" ng-click="salvaProduto()" type="button" class="btn btn-primary">Finalizar Compra</a>
+<a ng-click="removeCampos()" class="btn btn-danger">Cancelar Compra</a>
 </div>
 
 
