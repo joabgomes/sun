@@ -18,7 +18,7 @@ describe('Módulo de Produtos', () => {
   });
 
   describe('GET /produto', function ()  {
-    it('deve retornar todas os produtos da base', (done) => {
+    it('deve retornar todos os produtos da base', (done) => {
       chai.request(server)
         .get('/v1/produtos')
         .end((err, res) => {
@@ -29,7 +29,7 @@ describe('Módulo de Produtos', () => {
           done();
         });
     });
-  });
+      });
 
   describe('POST /produtos', () => {
     it('deve cadastrar um novo produto na base', (done) => {
@@ -57,7 +57,7 @@ describe('Módulo de Produtos', () => {
         });
     });
 
-    it('não deve cadastrar um nova produto na base sem codigo de barras', (done) => {
+    it('não deve cadastrar um novo produto na base sem o codigo de barras', (done) => {
       let produto = {
         nm_item: 'Lasanha',
         tipo_item: 'Produto',
@@ -69,13 +69,13 @@ describe('Módulo de Produtos', () => {
       };
 
       chai.request(server)
-        .post('/v1/produtos')
-        .send(produto)
-        .end((err, res) => {
-          res.should.have.status(500);
-
-          done();
-        });      
+      .post('/v1/produtos')
+      .send(produto)
+      .end((err, res) => {
+        res.should.have.status(500);
+        
+        done();
+      });
     });
   });
 
@@ -136,7 +136,7 @@ describe('Módulo de Produtos', () => {
           });
       });
     });
-  });
+        });
 
   describe('PUT /produtos/:id', () => {
     it('deve atualizar os dados de um produto na base', (done) => {
@@ -150,7 +150,6 @@ describe('Módulo de Produtos', () => {
         modelo: 'Sadia',
         status: 'Ativo'
       });
-
       produto.save((err, produtos) => {
 
         let produtoAtualizado = Object.assign(produto);
@@ -158,7 +157,6 @@ describe('Módulo de Produtos', () => {
         produtoAtualizado.unidade = 100  
 
         chai.request(server)
-          .put('/v1/produtos/' + produto._id, produtoAtualizado)
           .send(produtoAtualizado)
           .end((err, res) => {
             res.should.have.status(200);
@@ -172,10 +170,7 @@ describe('Módulo de Produtos', () => {
             res.body.should.have.property('modelo');
             res.body.should.have.property('status');
             res.body.should.have.property('_id').to.equal(produto.id);
-
             done();
           });
       });
     });
-  });
-});
