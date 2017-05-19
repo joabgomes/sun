@@ -1,22 +1,18 @@
 const VendasService = require('./vendas.service');
 
 const api = {
-    adiciona: adicionarVendaAPI
+  adiciona: adicionarVendaAPI
 };
 
 module.exports = api;
-
 /**
  * POST /vendas
  */
-
 function adicionarVendaAPI(req,res){
-    var venda = req.body;
-    console.log(venda);
-    VendasService.adicionarVenda(venda)
+  VendasService.adicionarVenda(req.body)
     .then(function(vendas){
-        return res.json(vendas);
-    },function(error){
-        return res.status(500).json(error);
-    });
+       return res.json(vendas);
+},function(error){
+    return res.status(500).json(error);
+});
 }
