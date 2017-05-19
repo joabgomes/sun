@@ -4,14 +4,14 @@ var Schema = mongoose.Schema;
 
 var produtoSchema = new Schema({
 
-    cd_barras: {type: Number,require: true},
-    nm_item: {type: String,require: true},
-    tipo_item: {type: String,require: true},
-    unidade: {type: String,require: true},
-    marca: {type: String,require: true},
-    modelo: {type: String,require: true},
-    status: {type: String,require: true},
-    preco: {type: Number, require: true},
+    cd_barras: {type: Number,required: true},
+    nm_item: {type: String,required: true},
+    tipo_item: {type: String,required: true},
+    unidade: {type: String,required: true},
+    marca: {type: String,required: true},
+    modelo: {type: String,required: true},
+    status: {type: String,required: true},
+    preco: {type: Number, required: true},
     quantidade: {type: Number, default: 0}
 
 });
