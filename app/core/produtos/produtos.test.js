@@ -170,7 +170,10 @@ describe('Módulo de Produtos', () => {
             res.body.should.have.property('modelo');
             res.body.should.have.property('status');
             res.body.should.have.property('_id').to.equal(produto.id);
+            
             done();
           });
+        });
       });
     });
+  });
