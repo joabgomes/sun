@@ -21,6 +21,7 @@ module.exports = function () {
 
   //Registrando módulos
   app.use(require('../app/core/compras/compras.routes'));
+  app.use(require('../app/core/produtos/produtos.routes'));
 
   return app;
 }
