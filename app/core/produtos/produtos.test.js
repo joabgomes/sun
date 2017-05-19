@@ -28,8 +28,8 @@ describe('Módulo de Produtos', () => {
 
           done();
         });
-    });
       });
+    });
 
   describe('POST /produtos', () => {
     it('deve cadastrar um novo produto na base', (done) => {
@@ -91,8 +91,8 @@ describe('Módulo de Produtos', () => {
         modelo: 'Sadia',
         status: 'Ativo'
       });
-
       produto.save((err, produto) => {
+
         chai.request(server)
           .del('/v1/produtos/' + produto._id)
           .end((err, res) => {
@@ -116,8 +116,8 @@ describe('Módulo de Produtos', () => {
         modelo: 'Sadia',
         status: 'Ativo'
       });
-
       produto.save((err, produto) => {
+
         chai.request(server)
           .get('/v1/produtos/' + produto._id)
           .end((err, res) => {
@@ -134,9 +134,9 @@ describe('Módulo de Produtos', () => {
             res.body.should.have.property('_id').to.equal(produto.id);
             done();
           });
+        });
       });
     });
-        });
 
   describe('PUT /produtos/:id', () => {
     it('deve atualizar os dados de um produto na base', (done) => {
@@ -157,6 +157,7 @@ describe('Módulo de Produtos', () => {
         produtoAtualizado.unidade = 100  
 
         chai.request(server)
+          .put('/v1/produtos/' + produto._id)
           .send(produtoAtualizado)
           .end((err, res) => {
             res.should.have.status(200);
