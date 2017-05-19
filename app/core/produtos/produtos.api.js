@@ -75,6 +75,7 @@ function excluirProdutoAPI(req, res) {
  */
 
 function atualizarProdutoAPI(req, res){
+    produtosService.atualizarProduto(req.params.id, req.body)
           .then(function(produto){
               res.json(produto);
           },function(error){
