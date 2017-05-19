@@ -15,7 +15,8 @@ describe('Módulo de Compras', () => {
     Compra.remove({}, (err) => {
       done();
     });
-  });
+  
+});
 
   describe('GET /compras', function ()  {
     it('deve retornar todas as compras da base', (done) => {
