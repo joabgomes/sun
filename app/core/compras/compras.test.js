@@ -15,8 +15,7 @@ describe('Módulo de Compras', () => {
     Compra.remove({}, (err) => {
       done();
     });
-  
-});
+  });
 
   describe('GET /compras', function ()  {
     it('deve retornar todas as compras da base', (done) => {
@@ -40,8 +39,8 @@ describe('Módulo de Compras', () => {
         produto: mongoose.Types.ObjectId(),
         quantidade: 1,
         valor_unitario: 123.45,
-        data_fabricacao: '14/05/2017',
-        validade: '14/05/2017'
+        data_fabricacao: new Date(),
+        validade: new Date()
       };
 
       chai.request(server)
@@ -63,8 +62,8 @@ describe('Módulo de Compras', () => {
         produto: mongoose.Types.ObjectId(),
         quantidade: 1,
         valor_unitario: 123.45,
-        data_fabricacao: '14/05/2017',
-        validade: '14/05/2017'
+        data_fabricacao: new Date(),
+        validade: new Date()
       };
 
       chai.request(server)
@@ -87,8 +86,8 @@ describe('Módulo de Compras', () => {
         quantidade: 1,
         valor_unitario: 123.45,
         valor_total: 123.45,
-        data_fabricacao: '14/05/2017',
-        validade: '14/05/2017'
+        data_fabricacao: new Date(),
+        validade: new Date()
       });
 
       compra.save((err, compra) => {
@@ -112,8 +111,8 @@ describe('Módulo de Compras', () => {
         quantidade: 1,
         valor_unitario: 123.45,
         valor_total: 123.45,
-        data_fabricacao: '14/05/2017',
-        validade: '14/05/2017'
+        data_fabricacao: new Date(),
+        validade: new Date()
       });
 
       compra.save((err, compra) => {
@@ -147,8 +146,8 @@ describe('Módulo de Compras', () => {
         quantidade: 1,
         valor_unitario: 123.45,
         valor_total: 123.45,
-        data_fabricacao: '14/05/2017',
-        validade: '14/05/2017'
+        data_fabricacao: new Date(),
+        validade: new Date()
       });
 
       compra.save((err, compra) => {

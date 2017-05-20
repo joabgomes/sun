@@ -49,7 +49,6 @@ function excluirCompraAPI(req, res) {
     .then(function() {
       return res.status(204).end();
     }, function(error) {
-      console.log(error);
       return res.status(500).json(error);
     });
 }
