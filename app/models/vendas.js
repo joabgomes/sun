@@ -3,8 +3,14 @@ var Schema = mongoose.Schema;
 
 var vendaSchema = new Schema ({
 
-   vendas:[{}],
-   total: {type: Number, default: 0}
+   vendas:[
+     {
+        produto    : {type:Schema.Types.ObjectId, required:true},
+        preco      : {type:Number, required:true},
+        quantidade : {type:Number, required:true},
+        valor      : {type:Number, required:true}
+     }
+   ],
    
 });
 
