@@ -1,24 +1,17 @@
 module.exports = function (uri) {
+  var logger = require('../app/util/logger');
   var mongoose = require('mongoose');
   mongoose.Promise = global.Promise;
   mongoose.connect(uri);
 
   mongoose.connection.on('connected', function () {
-    console.log('Conectado ao banco de dados!');
-  });
-
-  mongoose.connection.on('connect', function (error) {
-    console.log('Erro na conexão: ' + error);
-  });
-
-  mongoose.connection.on('disconected', function () {
-    console.log('Desconectado do banco de dados!');
+    logger.info('Conectado ao banco de dados!');
   });
 
   process.on('SIGINT', function () {
     mongoose.connection.close(function () {
-      console.log('Conexão com o banco encerrada pelo término da aplicação');
+      logger.info('Conexão com o banco encerrada pelo término da aplicação');
       process.exit(0);
     });
   });
-}
+};
