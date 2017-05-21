@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha app/**/*.test.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "eslint": "./node_modules/.bin/eslint ./"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "eslint": "^3.19.0",
     "mocha": "^3.4.1"
   }
 }
