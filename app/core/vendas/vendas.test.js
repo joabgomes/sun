@@ -16,6 +16,19 @@ describe('Módulo de Vendas', () => {
       done();
     });
 });
+  describe('GET /vendas', () => {
+    it('Deve retornar todas as vendas registradas na base',(done) =>{
+      chai.request(server)
+      .get('/v1/vendas')
+      .end((err,res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('array');
+        res.body.length.should.be.eql(0);
+
+        done();
+      });
+    });
+  });
 
   describe('POST /vendas', () => {
     it('Deve cadastrar uma nova venda na base', (done) => {

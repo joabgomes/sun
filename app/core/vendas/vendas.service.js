@@ -2,7 +2,16 @@ const mongoose = require('mongoose');
 const Venda = mongoose.model('Venda');
 
 module.exports = {
-    adicionarVenda
+    adicionarVenda,
+    listarVendas
+}
+/**
+ * Lista todas as vendas realizadas
+ * 
+ * @return {Promisse<Venda>[]} Array do model Venda
+ */
+function listarVendas(){
+  return Venda.find();
 }
 /**
  * Registra uma nova venda na base de dados
