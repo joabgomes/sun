@@ -1,7 +1,8 @@
 const VendasService = require('./vendas.service');
 
 const api = {
-  adiciona: adicionarVendaAPI
+  adiciona: adicionarVendaAPI,
+  buscaPorId: buscarVendaPorIdAPI
 };
 module.exports = api;
 /**
@@ -14,4 +15,16 @@ function adicionarVendaAPI(req,res){
 },function(error){
     return res.status(500).json(error);
 });
+}
+
+/**
+ * GET /vendas/:id
+ */
+function buscarVendaPorIdAPI(req,res){
+  VendasService.buscarVendaPorId(req.params.id)
+    .then(function(venda){
+      return res.json(venda);
+    },function(error){
+      return res.status(404).json(error);
+    });
 }

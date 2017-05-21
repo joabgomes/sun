@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Venda = mongoose.model('Venda');
 
 module.exports = {
-    adicionarVenda
+    adicionarVenda,
+    buscarVendaPorId
 }
 /**
  * Registra uma nova venda na base de dados
@@ -16,3 +17,13 @@ function adicionarVenda(novaVenda){
   })
   return venda.save();
 }
+
+/**
+ * Busca por Id uma venda na base de dados
+ * 
+ * @param {Number} vendaId Id a venda a ser pesquisada
+ */
+function buscarVendaPorId(vendaId){
+  return Venda.findById(vendaId);
+}
+
