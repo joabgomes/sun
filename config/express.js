@@ -22,6 +22,7 @@ module.exports = function () {
   app.use(require('../app/core/usuarios/usuarios.routes'));
   app.use(require('../app/core/produtos/produtos.routes'));
   app.use(require('../app/core/vendas/vendas.routes'));
+  app.use(require('../app/core/clienteSun/clientesun.routes'));
 
   return app;
 };
