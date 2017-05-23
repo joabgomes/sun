@@ -1,6 +1,6 @@
-var express = require('express');
-var produtosAPI = require('./produtos.api');
-var router = express.Router();
+const express = require('express');
+const produtosAPI = require('./produtos.api');
+const router = express.Router();
 
 router.route('/v1/produtos')
   .get(produtosAPI.lista)
@@ -9,6 +9,6 @@ router.route('/v1/produtos')
 router.route('/v1/produtos/:id')
   .get(produtosAPI.buscaPorId)
   .put(produtosAPI.atualiza)
-  .delete(produtosAPI.excluir);
+  .delete(produtosAPI.exclui);
 
 module.exports = router;

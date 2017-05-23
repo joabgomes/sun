@@ -4,7 +4,7 @@ const api = {
     lista: listarProdutosAPI,
     adiciona: adicionarProdutoAPI,
     buscaPorId: buscarProdutoPorIdAPI,
-    excluir: excluirProdutoAPI,
+    exclui: excluirProdutoAPI,
     atualiza: atualizarProdutoAPI
 };
 
