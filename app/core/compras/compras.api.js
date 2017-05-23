@@ -26,7 +26,12 @@ function listarComprasAPI(req, res) {
  * GET /compras/:id
  */
 function buscarCompraPorIdAPI(req, res) {
-  return res.status(501).end();
+  ComprasService.buscarCompraPorId(req.params.id)
+    .then(function(compra){
+      return res.json(compra);
+    }, function(error){
+      return res.status(404).json(error);
+    });
 }
 
 /**
@@ -35,7 +40,7 @@ function buscarCompraPorIdAPI(req, res) {
 function adicionarCompraAPI(req, res) {
   ComprasService.adicionarCompra(req.body)
     .then(function(novaCompra) {
-      return res.json(novaCompra);
+      return res.json(novaCompra);      
     }, function(error) {
       return res.status(500).json(error);
     });
@@ -57,5 +62,10 @@ function excluirCompraAPI(req, res) {
  * PUT /compras/:id
  */
 function atualizarCompraAPI(req, res) {
-  return res.status(501).end();
+  ComprasService.atualizarCompra(req.params.id,req.body)
+    .then(function(compra){
+      return res.json(compra);
+    }, function(error){
+      return res.status(500).json(error);
+    });
 }
