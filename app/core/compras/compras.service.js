@@ -27,16 +27,32 @@ function listarCompras() {
  */
 function adicionarCompra(novaCompra) {
   var compra = new Compra({
-    nota_fiscal: novaCompra.nota_fiscal,
-    codigo: novaCompra.codigo,
-    produto: novaCompra.produto,
-    quantidade: novaCompra.quantidade,
-    valor_unitario: novaCompra.valor_unitario,
-    valor_total: novaCompra.valor_unitario * novaCompra.quantidade,
-    data_fabricacao: novaCompra.data_fabricacao,
-    validade: novaCompra.validade,
-    codigo_ean: novaCompra.codigo_ean //o que é essa informacao? nao está no schema de Compra
+    cd_compra: novaCompra.cd_compra,
+    vlr_total: novaCompra.vlr_total,
+    num_itens: novaCompra.num_itens,
+    dt_hora:   novaCompra.dt_hora,
+    produtos: [],
+    
+    loja_compra: {
+      cd_loja: novaCompra.loja_compra.cd_loja,
+      nm_loja: novaCompra.loja_compra.nm_loja
+    },
+  
+    num_nf: novaCompra.num_nf, 
+
   });
+
+  for(let i = 0; i < novaCompra.produtos.length; i++){
+    compra.produtos[i] = {
+      cd_produto:   novaCompra.produtos[i].cd_produto,
+      cd_barras:    novaCompra.produtos[i].cd_barras,
+      nm_item:      novaCompra.produtos[i].cd_barras,
+      vlr_unitario: novaCompra.produtos[i].vlr_unitario,
+      quantidade:   novaCompra.produtos[i].quantidade,
+      vlr_total:    novaCompra.produtos[i].vlr_total,
+      validade:     novaCompra.produtos[i].validade
+    }
+  }
 
   return compra.save();
 }
@@ -46,16 +62,17 @@ function adicionarCompra(novaCompra) {
  * @param {number} idCompra ID da compra a ser pesquisada
  */
 function buscarCompraPorId(idCompra) {
-  //TO DO: me implemente
-  return null;
+  return Compra.findById(idCompra);
 }
 
 /**
  * Atualiza as informações de uma determinada compra
+ * 
+ *  @param {Number} idCompra Id da Compra a ser atualizada
+ *  @param {Dados} dados Os dados que vem do body da view
  */
-function atualizarCompra() {
-  //TO DO: me implemente
-  return null;
+function atualizarCompra(idCompra,dados) {
+  return Compra.findByIdAndUpdate(idCompra, dados);
 }
 
 /**
