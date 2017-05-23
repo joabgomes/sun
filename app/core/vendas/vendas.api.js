@@ -22,10 +22,10 @@ function listarVendasAPI(req,res){
 /**
  * POST /vendas
  */
-function adicionarVendaAPI(req,res){
+function adicionarVendaAPI(req, res){
   VendasService.adicionarVenda(req.body)
-    .then(function(vendas){
-      return res.json(vendas);
+    .then(function(novaVenda){
+      return res.json(novaVenda);
     }, function(error){
       return res.status(500).json(error);
     });
