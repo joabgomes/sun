@@ -3,7 +3,7 @@ const ClienteSunService = require('./clientesun.service');
 const api = {
     lista: listarClienteSunAPI,
     adiciona: adicionarClienteSunAPI,
-    buscarPorId: buscarClienteSunPorIdAPI,
+    buscaPorId: buscarClienteSunPorIdAPI,
     exclui: excluirClienteSunAPI,
     atualiza: atualizaClienteSunAPI
 };

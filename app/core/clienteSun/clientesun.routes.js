@@ -7,7 +7,7 @@ router.route('/v1/clientesun')
     .post(ClienteSunAPI.adiciona);
 
 router.route('/v1/clientesun/:id')
-    .get(ClienteSunAPI.buscarPorId)
+    .get(ClienteSunAPI.buscaPorId)
     .delete(ClienteSunAPI.exclui)
     .put(ClienteSunAPI.atualiza);
 
