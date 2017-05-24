@@ -29,13 +29,21 @@ function listarProdutos() {
  */
 function adicionarProduto(novoProduto){
     var produto = new Produto({
-        cd_barras: novoProduto.cd_barras,
         nm_item: novoProduto.nm_item,
-        tipo_item: novoProduto.tipo_item,
+        cd_produto: novoProduto.cd_produto,
+        cd_barras: novoProduto.cd_barras,
+        vlr_unitario: novoProduto.vlr_unitario,
         unidade: novoProduto.unidade,
-        preco: novoProduto.preco,
-        marca: novoProduto.marca,
+        fabricante: {
+            nm_fabricante: novoProduto.fabricante.nm_fabricante,
+            cnpj: novoProduto.fabricante.cnpj
+        },
+        categoria: novoProduto.categoria,
         modelo: novoProduto.modelo,
+        loja: {
+            cd_loja: novoProduto.loja.cd_loja,
+            nm_loja: novoProduto.loja.nm_loja
+        },
         status: novoProduto.status
     });
     return produto.save();

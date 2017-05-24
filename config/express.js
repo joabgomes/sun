@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var consign = require('consign');
-var path = require('path');
 
 module.exports = function () {
   app.set('secret', 'ohomemmacaconaotemalmaenemcoracao');
@@ -15,7 +14,6 @@ module.exports = function () {
     .include('models')   //Não precisa mais dar require em todos arquivos dentro da 'api' e da 'routes'
     .then('api/autentica.js')
     .then('api')
-    .then('routes/autentica.js')
     .then('routes')
     .into(app);
 
@@ -24,6 +22,8 @@ module.exports = function () {
   app.use(require('../app/core/usuarios/usuarios.routes'));
   app.use(require('../app/core/produtos/produtos.routes'));
   app.use(require('../app/core/vendas/vendas.routes'));
+  app.use(require('../app/core/clienteSun/clientesun.routes'));
+  app.use(require('../app/core/estoque/estoque.routes'));
 
   return app;
-}
+};
