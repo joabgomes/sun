@@ -1,15 +1,15 @@
 var express = require('express');
-var UsuariosAPI = require('./usuarios.api');
+var usuariosAPI = require('./usuarios.api');
 var router = express.Router();
 
 router.route('/v1/usuarios')
-    .get(UsuariosAPI.lista)
-    .post(UsuariosAPI.adiciona);
+  .get(usuariosAPI.lista)
+  .post(usuariosAPI.adiciona);
 
 router.route('/v1/usuarios/:id')
-    .get(UsuariosAPI.buscarPorId)
-    .delete(UsuariosAPI.exclui)
-    .put(UsuariosAPI.atualiza);
+  .get(usuariosAPI.buscaPorId)
+  .delete(usuariosAPI.exclui)
+  .put(usuariosAPI.atualiza);
 
 module.exports = router;
     

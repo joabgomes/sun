@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 const Usuario = mongoose.model('Usuario');
 
-module.exports ={
+
+module.exports = {
     listarUsuarios,
     adicionarUsuario,
-    buscarPorId,
+    buscarUsuarioPorId,
     atualizarUsuario,
     excluirUsuario
-};
+}
 
 /**
  * Listar os usuarios cadastrado
@@ -27,27 +28,27 @@ function listarUsuarios() {
 function adicionarUsuario(novoUsuario){
     var usuario = new Usuario({
         nome: novoUsuario.nome,
-        id: novoUsuario.id,
+        user_id: novoUsuario.id,
         senha: novoUsuario.senha,
         nivel: novoUsuario.nivel
     });
-
-return usuario.save();
+    return usuario.save();
 }
+
 /**
  * Retorna um usuario a partir da base de dados ID
- * @param {number} idUsuario ID do usuario a ser pesquisado
+ * @param {Number} idUsuario ID do usuario a ser pesquisado
  */
-function buscarPorId(idUsuario){
-    //TO DO: me implante 
-    return null;
+function buscarUsuarioPorId(idUsuario){
+    return Usuario.findById(idUsuario);
 }
 /**
  * Atualiza as informações de um determinado usuario
+ * @param {Number} idUsuario Id do usuario a ser atualizado
+ * @param {Dados} dados Os dados que vem do body da view
  */
-function atualizarUsuario(){
-//TO DO: me implante
-    return null;
+function atualizarUsuario(idUsuario, dados){
+    return Usuario.findByIdAndUpdate(idUsuario, dados);
 }
 /**
  * Exclui um usuario da base de dados a partir do ID

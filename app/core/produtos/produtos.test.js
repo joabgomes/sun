@@ -162,15 +162,15 @@ describe('Módulo de Produtos', () => {
           .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object');
-            res.body.should.have.property('cd_barras').to.not.equal(produto.cd_barras);
+            res.body.should.have.property('cd_barras').not.equal(produto.cd_barras);
             res.body.should.have.property('nm_item');
             res.body.should.have.property('tipo_item');
-            res.body.should.have.property('unidade').to.not.equal(produto.unidade);
+            res.body.should.have.property('unidade').not.equal(produto.unidade);
             res.body.should.have.property('preco');
             res.body.should.have.property('marca');
             res.body.should.have.property('modelo');
             res.body.should.have.property('status');
-            res.body.should.have.property('_id').to.equal(produto.id);
+            res.body.should.have.property('_id').equal(produto.id);
             
             done();
           });
