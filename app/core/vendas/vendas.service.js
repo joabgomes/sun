@@ -22,9 +22,30 @@ function listarVendas(){
  * @returns {Promise<Venda>[]} Model Venda com o _id registrado
  */
 function adicionarVenda(novaVenda){
-  var venda = new Venda({
-     vendas:novaVenda
-  })
+  var venda = new Venda ({
+    cd_barras: novaVenda.cd_barras,
+    cd_estoque: novaVenda.cd_estoque,
+    nm_item: novaVenda.nm_item,
+    vlr_unitario: novaVenda.vlr_unitario,
+    quantidade: novaVenda.quantidade,
+    vlr_total: novaVenda.vlr_total,
+    loja_venda: {
+      cd_loja: novaVenda.loja_venda.cd_loja,
+      nm_loja: novaVenda.loja_venda.nm_loja
+    },
+    usuario_venda: {
+      cd_usuario: novaVenda.usuario_venda.cd_usuario,
+      nm_usuario: novaVenda.usuario_venda.nm_usuario
+    },
+    transacao: {
+      tp_pagamento: novaVenda.transacao.tp_pagamento,
+      vlr_recebido: novaVenda.transacao.vlr_recebido,
+      vlr_troco:    novaVenda.transacao.vlr_troco
+    },
+    num_nf:       novaVenda.num_nf
+
+
+  });
   return venda.save();
 }
 
